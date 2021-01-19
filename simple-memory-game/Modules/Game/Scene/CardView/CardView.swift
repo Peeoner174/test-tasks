@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CardCollectionViewCell: UICollectionViewCell, UserInteractionHandler {
+class CardView: UIView, UserInteractionHandler {
     
     // MARK: - UI Properties
     
@@ -16,38 +16,40 @@ class CardCollectionViewCell: UICollectionViewCell, UserInteractionHandler {
     
     // MARK: - Properties
     
-    var isFlipped: Bool = false
-    var image: UIImage?
+    var model = CardModel()
     
     // MARK: - Inits and configs methods
     
-    func configure(image: UIImage, isFlipped: Bool) {
-        self.image = image
-        self.isFlipped = isFlipped
+    func configure(cardModel: CardModel) {
+        self.model = cardModel
     }
     
     private func flip() {
-        if isFlipped {
+        if model.isFlipped {
             UIView.transition(with: self, duration: 0.4, options: .transitionFlipFromLeft, animations: {
-                self.imageView.image = self.image
+                self.imageView.image = self.model.image
                 self.imageView.layer.cornerRadius = 0.0
             })
             
-            isFlipped = true
+            model.isFlipped = true
         } else {
             UIView.transition(with: self, duration: 0.4, options: .transitionFlipFromRight, animations: {
                 self.imageView.image = nil
                 self.imageView.layer.cornerRadius = 2.0
             })
             
-            isFlipped = false
+            model.isFlipped = false
         }
     }
     
     // MARK: - UserInteractionHandler
     
     func handle(controlEvents: UIControl.Event) {
-        if controlEvents == .touchUpInside { flip() }
+        if controlEvents == .touchUpInside {
+            if model.isClickable {
+                flip()
+            }
+        }
     }
     
     var nextHandler: UserInteractionHandler?
