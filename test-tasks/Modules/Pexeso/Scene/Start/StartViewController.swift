@@ -39,7 +39,7 @@ class StartViewController: ViewController {
         viewModel.updateLevel(Int(sender.value))
     }
     
-    @IBAction func startAction(_ sender: UIButton) {
+    @IBAction func startAction(_ sender: Button) {
         handle(.game)
     }
     

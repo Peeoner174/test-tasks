@@ -13,12 +13,12 @@
         <!--Game View Controller-->
         <scene sceneID="vrO-VR-1rA">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="MkN-nq-hJ5" customClass="GameViewController" customModule="simple_memory_game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="MkN-nq-hJ5" customClass="GameViewController" customModule="test_tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KDh-mL-uwE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cwy-xW-9ca" customClass="CardsHolderView" customModule="simple_memory_game" customModuleProvider="target">
+                            <view contentMode="scaleToFill" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cwy-xW-9ca" customClass="CardsHolderView" customModule="test_tasks" customModuleProvider="target">
                                 <rect key="frame" x="15" y="15" width="345" height="533.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -43,7 +43,7 @@
         <!--Start View Controller-->
         <scene sceneID="gZu-BO-zwC">
             <objects>
-                <viewController storyboardIdentifier="StartViewController" id="vsD-n3-pEZ" customClass="StartViewController" customModule="simple_memory_game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" id="vsD-n3-pEZ" customClass="StartViewController" customModule="test_tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="imN-xk-ScQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                                     <action selector="selectLevelAction:" destination="vsD-n3-pEZ" eventType="valueChanged" id="HUa-D6-fUW"/>
                                                 </connections>
                                             </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level {2}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-Jd-p7P" customClass="Label" customModule="simple_memory_game" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level {2}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-Jd-p7P" customClass="Label" customModule="test_tasks" customModuleProvider="target">
                                                 <rect key="frame" x="234" y="0.0" width="66" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -75,7 +75,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLF-3C-v04">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLF-3C-v04" customClass="Button" customModule="test_tasks" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="30" width="300" height="70"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
