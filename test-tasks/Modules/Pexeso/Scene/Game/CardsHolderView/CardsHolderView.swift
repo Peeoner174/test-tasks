@@ -78,6 +78,13 @@ class CardsHolderView: XibView {
         }
     }
 
+    // MARK: - Lifecycle
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        movesCounter = 0
+    }
+    
     // MARK: - Inits and configs methods
     
     func configure(with cards: CurrentValueSubject<[Card]>, uiConfig: CardsHolderView.UI? = nil, delegate: CardsHolderViewDelegate? = nil) {
