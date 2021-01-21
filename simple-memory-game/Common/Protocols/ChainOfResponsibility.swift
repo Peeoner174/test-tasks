@@ -11,6 +11,7 @@ protocol UserInteractionHandler: UIResponder {
     @discardableResult
     func setNext(handler: UserInteractionHandler) -> UserInteractionHandler
     
+    /// Must be weak
     var nextHandler: UserInteractionHandler? { get set }
     
     func handle(controlEvents: UIControl.Event)
