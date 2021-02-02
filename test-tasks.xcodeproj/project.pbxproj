@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24F6C2F88BADD0188F2C160E /* Pods_test_tasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23A1AD4EC66C01C9BDB6BD6 /* Pods_test_tasks.framework */; };
+		5C148C9C25C958BD007C8531 /* EarthMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C148C9B25C958BC007C8531 /* EarthMap.storyboard */; };
 		6E33C4C125B865990028E07D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33C4C025B865990028E07D /* StartViewController.swift */; };
 		6E34089825B83EB700259B0F /* Pexeso.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E34089725B83EB700259B0F /* Pexeso.storyboard */; };
 		6E34089C25B83F5D00259B0F /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E34089B25B83F5D00259B0F /* XibView.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		083149DDB28CEA6722842D7F /* Pods-test-tasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-tasks.release.xcconfig"; path = "Target Support Files/Pods-test-tasks/Pods-test-tasks.release.xcconfig"; sourceTree = "<group>"; };
+		5C148C9B25C958BC007C8531 /* EarthMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EarthMap.storyboard; sourceTree = "<group>"; };
 		6E33C4C025B865990028E07D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		6E34089725B83EB700259B0F /* Pexeso.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pexeso.storyboard; sourceTree = "<group>"; };
 		6E34089B25B83F5D00259B0F /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C148C9425C95583007C8531 /* Taxi */ = {
+			isa = PBXGroup;
+			children = (
+				5C148C9A25C95813007C8531 /* Map */,
+			);
+			path = Taxi;
+			sourceTree = "<group>";
+		};
+		5C148C9A25C95813007C8531 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5C148C9B25C958BC007C8531 /* EarthMap.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		6E33C4BC25B863FE0028E07D /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +276,7 @@
 		6EAFDFEE25B72838007393DF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5C148C9425C95583007C8531 /* Taxi */,
 				6EBC384D25B882BC0022031C /* TestTasksList */,
 				6EAFDFEF25B72840007393DF /* Pexeso */,
 			);
@@ -492,6 +511,7 @@
 				6EAFDFF925B729D6007393DF /* CardsHolderView.xib in Resources */,
 				6EAE5C9D25B70FA700FEEF12 /* Assets.xcassets in Resources */,
 				6EAE5C9B25B70FA600FEEF12 /* TestTasksList.storyboard in Resources */,
+				5C148C9C25C958BD007C8531 /* EarthMap.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
