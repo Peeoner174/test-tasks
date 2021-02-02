@@ -9,7 +9,11 @@ import UIKit
 
 class Button: UIButton, UserInteractionHandler {
     weak var nextHandler: UserInteractionHandler?
-    lazy var userInterationHandlerView: UIView = self.nextHandler as? UIView ?? self
+    var userInterationHandlerView: UIView {
+        get {
+            self.nextHandler as? UIView ?? self
+        }
+    }
     
     func handle(controlEvents: UIControl.Event) { }
     
