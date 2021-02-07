@@ -13,6 +13,8 @@
 		6E34089C25B83F5D00259B0F /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E34089B25B83F5D00259B0F /* XibView.swift */; };
 		6E3408A225B8407600259B0F /* ApiFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3408A125B8407600259B0F /* ApiFacade.swift */; };
 		6E3408A625B840CC00259B0F /* MemoryGameApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3408A525B840CC00259B0F /* MemoryGameApi.swift */; };
+		6E996B0F25D0385900126375 /* PushNotificationsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */; };
+		6E996B1D25D04B8600126375 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B1C25D04B8600126375 /* LogService.swift */; };
 		6EAC031025B9B51700B4921E /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC030F25B9B51700B4921E /* Pair.swift */; };
 		6EAC89FB25B7720400DD3B0C /* PexesoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC89FA25B7720400DD3B0C /* PexesoViewModel.swift */; };
 		6EAE5C9425B70FA600FEEF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE5C9325B70FA600FEEF12 /* AppDelegate.swift */; };
@@ -64,6 +66,9 @@
 		6E34089B25B83F5D00259B0F /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		6E3408A125B8407600259B0F /* ApiFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFacade.swift; sourceTree = "<group>"; };
 		6E3408A525B840CC00259B0F /* MemoryGameApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApi.swift; sourceTree = "<group>"; };
+		6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsAppDelegate.swift; sourceTree = "<group>"; };
+		6E996B1425D03C2F00126375 /* test-tasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "test-tasks.entitlements"; sourceTree = "<group>"; };
+		6E996B1C25D04B8600126375 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		6EAC030F25B9B51700B4921E /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		6EAC89FA25B7720400DD3B0C /* PexesoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoViewModel.swift; sourceTree = "<group>"; };
 		6EAE5C9025B70FA600FEEF12 /* test-tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +212,7 @@
 		6EAE5C9225B70FA600FEEF12 /* test-tasks */ = {
 			isa = PBXGroup;
 			children = (
+				6E996B1425D03C2F00126375 /* test-tasks.entitlements */,
 				6EBC38A625B89C990022031C /* NeedleGenerated.swift */,
 				6EBC384325B87F2A0022031C /* Resourses */,
 				6EBC383225B87C570022031C /* AppDelegate */,
@@ -217,6 +223,7 @@
 				6EAE5C9C25B70FA700FEEF12 /* Assets.xcassets */,
 				6EAE5C9E25B70FA700FEEF12 /* LaunchScreen.storyboard */,
 				6EAE5CA125B70FA700FEEF12 /* Info.plist */,
+				6E996B1C25D04B8600126375 /* LogService.swift */,
 			);
 			path = "test-tasks";
 			sourceTree = "<group>";
@@ -368,6 +375,7 @@
 				6EBC383325B87C7A0022031C /* AppCoordinator.swift */,
 				6EBC384725B8813D0022031C /* AppDelegateFactory.swift */,
 				6EBC384A25B881550022031C /* CompositeAppDelegate.swift */,
+				6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -563,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EBC385425B888130022031C /* Clamping.swift in Sources */,
+				6E996B0F25D0385900126375 /* PushNotificationsAppDelegate.swift in Sources */,
 				6E3408A625B840CC00259B0F /* MemoryGameApi.swift in Sources */,
 				6EAFDFCB25B714DF007393DF /* CardView.swift in Sources */,
 				6EBC383B25B87D9D0022031C /* PexesoCoordinator.swift in Sources */,
@@ -593,6 +602,7 @@
 				6EBC381825B87A1C0022031C /* Drawable.swift in Sources */,
 				6EBC385825B8887F0022031C /* TestTasksListCoordinator.swift in Sources */,
 				6E3408A225B8407600259B0F /* ApiFacade.swift in Sources */,
+				6E996B1D25D04B8600126375 /* LogService.swift in Sources */,
 				6EBC381B25B87A780022031C /* CompletionBlocks.swift in Sources */,
 				6EAFDFDC25B717BB007393DF /* Assert + Unimplemented.swift in Sources */,
 				6EBC381E25B87ABF0022031C /* NavigationController.swift in Sources */,
@@ -750,8 +760,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "test-tasks/test-tasks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6BS4YLQR35;
+				DEVELOPMENT_TEAM = Z7792TKQU4;
 				INFOPLIST_FILE = "test-tasks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -771,8 +782,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "test-tasks/test-tasks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6BS4YLQR35;
+				DEVELOPMENT_TEAM = Z7792TKQU4;
 				INFOPLIST_FILE = "test-tasks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

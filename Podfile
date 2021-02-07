@@ -12,5 +12,8 @@ target 'test-tasks' do
   
   # For random set of system icons
   pod 'SFSafeSymbols', '~> 2.1.1'
+  
+  # Debag
+  pod 'SwiftyBeaver'
 
 end
