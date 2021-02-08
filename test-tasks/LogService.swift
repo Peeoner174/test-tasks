@@ -6,125 +6,122 @@
 //
 
 import SwiftyBeaver
-import Foundation
-/**
- class is a simple wrapper class for the SwiftyBeaver public third party logger library.
- 
- - Parameters:
- context: the context related String for the different logs.
- 
- 💭 VERBOSE AppDelegate.application():Line - not so important.
- 
- ✅ DEBUG AppDelegate.application():Line - something to debug.
- 
- ℹ️ INFO AppDelegate.application():Line - a nice information.
- 
- ⚠️ WARNING AppDelegate.application():Line - oh not, that won't be good.
- 
- 🚫 ERROR AppDelegate.application():Line - ouch, an error did occur!
- 
- */
-class Logger {
+
+struct LogMessage {
+    let message: Any
+    let file: String
+    let function: String
+    let line: Int
+    let context: Any?
     
-    public let context: String
-    
-    // MARK: Singleton
-    static let shared = Logger()
-    
-    public init( _ context: String = "APP") {
+    init(
+        _ message: @autoclosure () -> Any,
+        _ file: String = #file,
+        _ function: String = #function,
+        _ line: Int = #line,
+        context: Any? = nil
+    ) {
+        self.file = file
+        self.function = function
+        self.line = line
+        self.message = message()
         self.context = context
+    }
+}
+
+protocol LogService: Service {
+    
+    /// log something generally unimportant (lowest priority)
+    func verbose(_ logMessage: LogMessage)
+    
+    /// log something which help during debugging (low priority)
+    func debug(_ logMessage: LogMessage)
+    
+    /// log something which you are really interested but which is not an issue or error (normal priority)
+    func info(_ logMessage: LogMessage)
+    
+    /// log something which may cause big trouble soon (high priority)
+    func warning(_ logMessage: LogMessage)
+    
+    /// log something which will keep you awake at night (highest priority)
+    func error(_ logMessage: LogMessage)
+}
+
+
+class Service {
+    func start() {
+        fatalError("Children should implement `start`.")
+    }
+}
+
+class LogServiceSwiftyBeaver: Service, LogService {
+    typealias logger = SwiftyBeaver
+    
+    override func start() {
+        let console = ConsoleDestination()
+        let file = FileDestination()
         
-        var consoleDestinationAlreadyExists = false
-        for destination in SwiftyBeaver.destinations {
-            if let consoleDest = destination as? ConsoleDestination {
-                consoleDestinationAlreadyExists = true
-                configureDestination(consoleDest)
-            }
-        }
+        console.minLevel = .verbose
+        file.minLevel = .warning
         
-        if !consoleDestinationAlreadyExists {
-            let consoleDest = ConsoleDestination()
-            configureDestination(consoleDest)
-            SwiftyBeaver.addDestination(consoleDest)
-        }
+        logger.addDestination(console)
+        logger.addDestination(file)
     }
     
-    //MARK: Public logging methods
-    
-    public func verbose(_ message: String?, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        SwiftyBeaver.verbose(formatMessage(message),file,function,line: line)
+    func verbose(_ logMessage: LogMessage) {
+        logger.custom(
+            level: .verbose,
+            message: logMessage.message,
+            file: logMessage.file,
+            function: logMessage.function,
+            line: logMessage.line,
+            context: logMessage.context
+        )
     }
     
-    public func debug(_ message: String?, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        SwiftyBeaver.debug(formatMessage(message),file,function,line: line)
+    func debug(_ logMessage: LogMessage) {
+        logger.custom(
+            level: .debug,
+            message: logMessage.message,
+            file: logMessage.file,
+            function: logMessage.function,
+            line: logMessage.line,
+            context: logMessage.context
+        )
     }
     
-    public func info(_ message: String?, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        SwiftyBeaver.info(formatMessage(message),file,function,line: line)
+    func info(_ logMessage: LogMessage) {
+        logger.custom(
+            level: .info,
+            message: logMessage.message,
+            file: logMessage.file,
+            function: logMessage.function,
+            line: logMessage.line,
+            context: logMessage.context
+        )
     }
     
-    public func warning(_ message: String?, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        SwiftyBeaver.warning(formatMessage(message),file,function,line: line)
+    func warning(_ logMessage: LogMessage) {
+        logger.custom(
+            level: .warning,
+            message: logMessage.message,
+            file: logMessage.file,
+            function: logMessage.function,
+            line: logMessage.line,
+            context: logMessage.context
+        )
     }
     
-    public func error(_ message: String?, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        SwiftyBeaver.error(formatMessage(message),file,function,line: line)
-    }
-    
-    
-    //MARK: Private
-    
-    private func formatMessage( _ message: String?) -> String {
-        let c = self.context
-        if let m = message {
-            return "[\(c)] \(m)"
-        } else {
-            return ""
-        }
-    }
-    
-    private func configureDestination( _ consoleDest: ConsoleDestination) {
-        consoleDest.format = "$C$DHH:mm:ss.SSS$d $L$c $N.$F:$l - $M"
-        consoleDest.levelColor.verbose = "💭"
-        consoleDest.levelColor.debug = "✅"
-        consoleDest.levelColor.info = "ℹ️"
-        consoleDest.levelColor.warning = "⚠️"
-        consoleDest.levelColor.error = "🚫"
-        
-        #if DEBUG
-        consoleDest.minLevel = .verbose
-        consoleDest.asynchronously = false
-        #else
-        consoleDest.minLevel = .info
-        consoleDest.asynchronously = true
-        #endif
-    }
-}
-
-protocol LogService {
-    func verbose(_ message: String?, _ file: String, _ function: String, _ line: Int)
-}
-
-extension LogService {
-    func verbose(_ message: String?, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        unimplemented()
+    func error(_ logMessage: LogMessage) {
+        logger.custom(
+            level: .error,
+            message: logMessage.message,
+            file: logMessage.file,
+            function: logMessage.function,
+            line: logMessage.line,
+            context: logMessage.context
+        )
     }
 }
 
 
-
-/*
-class B: LogService {
-    
-}
-
-class A {
-    let a: LogService
-    
-    init() {
-        a = B()
-        
-        a.verbose("asdasd")
-    }
-}
-*/
