@@ -12,13 +12,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppCoordinatorResolver {
 
     lazy var appDelegate = AppDelegateFactory.makeDefault(self.window)
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         
         _ = appDelegate.application?(application, didFinishLaunchingWithOptions: launchOptions)
         appCoordinator.start()
-
+        logger.start()
+        
         return true
     }
     
