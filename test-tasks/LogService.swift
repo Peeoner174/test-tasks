@@ -60,12 +60,19 @@ class LogServiceSwiftyBeaver: Service, LogService {
     override func start() {
         let console = ConsoleDestination()
         let file = FileDestination()
+        let cloud = SBPlatformDestination(
+            appID: "1P9mNQ",
+            appSecret: "ziy3nmo8jbtPxba2edfix7hlnez1kcbn",
+            encryptionKey: "0vsvr8jqzph7ezqniiyyb8Ivhv16gbvl"
+        )
         
         console.minLevel = .verbose
         file.minLevel = .warning
+        cloud.minLevel = .verbose
         
         logger.addDestination(console)
         logger.addDestination(file)
+        logger.addDestination(cloud)
     }
     
     func verbose(_ logMessage: LogMessage) {

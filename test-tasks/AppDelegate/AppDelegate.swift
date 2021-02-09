@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppCoordinatorResolver {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         
+        logger.start()
         _ = appDelegate.application?(application, didFinishLaunchingWithOptions: launchOptions)
         appCoordinator.start()
-        logger.start()
         
         return true
     }

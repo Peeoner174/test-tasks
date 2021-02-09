@@ -2,6 +2,9 @@
 
 import NeedleFoundation
 
+// swiftlint:disable unused_declaration
+private let needleDependenciesHash : String? = nil
+
 // MARK: - Registration
 
 public func registerProviderFactories() {
@@ -19,18 +22,22 @@ public func registerProviderFactories() {
 
 // MARK: - Providers
 
-/// ^->RootComponentImpl->TestTaskListComponent
-private class TestTaskListDependencybb7c084038f1bd01ebd3Provider: TestTaskListDependency {
+private class TestTaskListDependencybb7c084038f1bd01ebd3BaseProvider: TestTaskListDependency {
     var testTaskListCoordinator: TestTasksListCoordinator {
         return rootComponentImpl.testTaskListCoordinator
     }
     private let rootComponentImpl: RootComponentImpl
-    init(component: NeedleFoundation.Scope) {
-        rootComponentImpl = component.parent as! RootComponentImpl
+    init(rootComponentImpl: RootComponentImpl) {
+        self.rootComponentImpl = rootComponentImpl
     }
 }
-/// ^->RootComponentImpl->PexesoComponent
-private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependency {
+/// ^->RootComponentImpl->TestTaskListComponent
+private class TestTaskListDependencybb7c084038f1bd01ebd3Provider: TestTaskListDependencybb7c084038f1bd01ebd3BaseProvider {
+    init(component: NeedleFoundation.Scope) {
+        super.init(rootComponentImpl: component.parent as! RootComponentImpl)
+    }
+}
+private class PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider: PexesoModuleDependency {
     var pexesoViewModel: PexesoViewModel {
         return rootComponentImpl.pexesoViewModel
     }
@@ -38,7 +45,13 @@ private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDe
         return rootComponentImpl.pexesoCoordinator
     }
     private let rootComponentImpl: RootComponentImpl
+    init(rootComponentImpl: RootComponentImpl) {
+        self.rootComponentImpl = rootComponentImpl
+    }
+}
+/// ^->RootComponentImpl->PexesoComponent
+private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider {
     init(component: NeedleFoundation.Scope) {
-        rootComponentImpl = component.parent as! RootComponentImpl
+        super.init(rootComponentImpl: component.parent as! RootComponentImpl)
     }
 }
