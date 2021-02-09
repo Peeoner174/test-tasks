@@ -9,6 +9,6 @@ import UIKit
 
 enum AppDelegateFactory {
     static func makeDefault(_ window: UIWindow?) -> AppDelegateType {
-        return CompositeAppDelegate(appDelegates: [])
+        return CompositeAppDelegate(appDelegates: [PushNotificationsAppDelegate(window: window)])
     }
 }
