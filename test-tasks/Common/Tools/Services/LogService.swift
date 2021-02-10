@@ -47,13 +47,6 @@ protocol LogService: Service {
     func error(_ logMessage: LogMessage)
 }
 
-
-class Service {
-    func start() {
-        fatalError("Children should implement `start`.")
-    }
-}
-
 class LogServiceSwiftyBeaver: Service, LogService {
     typealias logger = SwiftyBeaver
     

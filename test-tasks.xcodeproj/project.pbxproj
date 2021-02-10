@@ -31,6 +31,8 @@
 		6EAFDFE825B7269A007393DF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFDFE725B7269A007393DF /* Card.swift */; };
 		6EAFDFEB25B7273B007393DF /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAFDFEA25B7273B007393DF /* CardView.xib */; };
 		6EAFDFF925B729D6007393DF /* CardsHolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAFDFF825B729D6007393DF /* CardsHolderView.xib */; };
+		6EB2B77525D420D100ECBB7E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2B77425D420D100ECBB7E /* Service.swift */; };
+		6EB2B77825D4217600ECBB7E /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2B77725D4217600ECBB7E /* ReachabilityManager.swift */; };
 		6EBC380E25B879CF0022031C /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC380D25B879CF0022031C /* BaseCoordinator.swift */; };
 		6EBC381225B879E70022031C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC381125B879E70022031C /* Coordinator.swift */; };
 		6EBC381525B87A010022031C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC381425B87A010022031C /* Router.swift */; };
@@ -87,6 +89,8 @@
 		6EAFDFE725B7269A007393DF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		6EAFDFEA25B7273B007393DF /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		6EAFDFF825B729D6007393DF /* CardsHolderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsHolderView.xib; sourceTree = "<group>"; };
+		6EB2B77425D420D100ECBB7E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		6EB2B77725D4217600ECBB7E /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		6EBC380D25B879CF0022031C /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		6EBC381125B879E70022031C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6EBC381425B87A010022031C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -223,7 +227,6 @@
 				6EAE5C9C25B70FA700FEEF12 /* Assets.xcassets */,
 				6EAE5C9E25B70FA700FEEF12 /* LaunchScreen.storyboard */,
 				6EAE5CA125B70FA700FEEF12 /* Info.plist */,
-				6E996B1C25D04B8600126375 /* LogService.swift */,
 			);
 			path = "test-tasks";
 			sourceTree = "<group>";
@@ -252,6 +255,8 @@
 		6EAFDFDA25B717A5007393DF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				6EB2B77325D4204E00ECBB7E /* Managers */,
+				6EB2B77225D4204700ECBB7E /* Services */,
 				6EBC380A25B879A70022031C /* Flow */,
 				6EAFDFF125B72890007393DF /* UI */,
 				6EAFDFDB25B717BB007393DF /* Assert + Unimplemented.swift */,
@@ -319,6 +324,23 @@
 				6EAFDFF825B729D6007393DF /* CardsHolderView.xib */,
 			);
 			path = CardsHolderView;
+			sourceTree = "<group>";
+		};
+		6EB2B77225D4204700ECBB7E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6EB2B77425D420D100ECBB7E /* Service.swift */,
+				6E996B1C25D04B8600126375 /* LogService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6EB2B77325D4204E00ECBB7E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6EB2B77725D4217600ECBB7E /* ReachabilityManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		6EBC380A25B879A70022031C /* Flow */ = {
@@ -574,6 +596,7 @@
 				6E996B0F25D0385900126375 /* PushNotificationsAppDelegate.swift in Sources */,
 				6E3408A625B840CC00259B0F /* MemoryGameApi.swift in Sources */,
 				6EAFDFCB25B714DF007393DF /* CardView.swift in Sources */,
+				6EB2B77825D4217600ECBB7E /* ReachabilityManager.swift in Sources */,
 				6EBC383B25B87D9D0022031C /* PexesoCoordinator.swift in Sources */,
 				6EBC383425B87C7A0022031C /* AppCoordinator.swift in Sources */,
 				6EBC384B25B881550022031C /* CompositeAppDelegate.swift in Sources */,
@@ -611,6 +634,7 @@
 				6EBC384125B87EE50022031C /* Reusable.swift in Sources */,
 				6EBC38A725B89C990022031C /* NeedleGenerated.swift in Sources */,
 				6EBC383725B87D420022031C /* PexesoComponent.swift in Sources */,
+				6EB2B77525D420D100ECBB7E /* Service.swift in Sources */,
 				6EBC38B825B8A15E0022031C /* Fonts.swift in Sources */,
 				6EBC383E25B87EC70022031C /* Storyboarded.swift in Sources */,
 			);
