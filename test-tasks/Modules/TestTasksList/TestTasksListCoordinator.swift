@@ -32,7 +32,7 @@ class TestTasksListCoordinator: BaseCoordinator {
         }
     }
     
-    public func getViewControllerAndRoute(_ navigation: TestTasksListNavigation, routeBlock: (Drawable, Router) -> Void) {
+    func getViewControllerAndRoute(_ navigation: TestTasksListNavigation, routeBlock: (Drawable, Router) -> Void) {
         let vc: Drawable
         switch navigation {
         case .pexeso:

@@ -6,6 +6,7 @@
 //
 
 import NeedleFoundation
+import UIKit
 
 fileprivate let sharedDIContainer: DIContainer = DIContainerImpl()
 

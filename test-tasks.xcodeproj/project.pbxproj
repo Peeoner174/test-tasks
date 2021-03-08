@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24F6C2F88BADD0188F2C160E /* Pods_test_tasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23A1AD4EC66C01C9BDB6BD6 /* Pods_test_tasks.framework */; };
 		6E33C4C125B865990028E07D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33C4C025B865990028E07D /* StartViewController.swift */; };
 		6E34089825B83EB700259B0F /* Pexeso.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E34089725B83EB700259B0F /* Pexeso.storyboard */; };
 		6E34089C25B83F5D00259B0F /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E34089B25B83F5D00259B0F /* XibView.swift */; };
@@ -17,6 +16,10 @@
 		6E996B1D25D04B8600126375 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B1C25D04B8600126375 /* LogService.swift */; };
 		6EAC031025B9B51700B4921E /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC030F25B9B51700B4921E /* Pair.swift */; };
 		6EAC89FB25B7720400DD3B0C /* PexesoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC89FA25B7720400DD3B0C /* PexesoViewModel.swift */; };
+		6EAD787825F651E900AFE6FD /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 6EAD787725F651E900AFE6FD /* NeedleFoundation */; };
+		6EAD788625F6542C00AFE6FD /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 6EAD788525F6542C00AFE6FD /* SFSafeSymbols */; };
+		6EAD788C25F6566200AFE6FD /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 6EAD788B25F6566200AFE6FD /* SwiftyBeaver */; };
+		6EAD789825F681DA00AFE6FD /* MoyaNetworkClient-Combine in Frameworks */ = {isa = PBXBuildFile; productRef = 6EAD789725F681DA00AFE6FD /* MoyaNetworkClient-Combine */; };
 		6EAE5C9425B70FA600FEEF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE5C9325B70FA600FEEF12 /* AppDelegate.swift */; };
 		6EAE5C9825B70FA600FEEF12 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE5C9725B70FA600FEEF12 /* GameViewController.swift */; };
 		6EAE5C9B25B70FA600FEEF12 /* TestTasksList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EAE5C9925B70FA600FEEF12 /* TestTasksList.storyboard */; };
@@ -61,8 +64,20 @@
 		6EBC38C225B8CDAD0022031C /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC38C125B8CDAD0022031C /* UIStackView + Extension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6EAD788325F653BA00AFE6FD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		083149DDB28CEA6722842D7F /* Pods-test-tasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-tasks.release.xcconfig"; path = "Target Support Files/Pods-test-tasks/Pods-test-tasks.release.xcconfig"; sourceTree = "<group>"; };
 		6E33C4C025B865990028E07D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		6E34089725B83EB700259B0F /* Pexeso.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pexeso.storyboard; sourceTree = "<group>"; };
 		6E34089B25B83F5D00259B0F /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
@@ -73,7 +88,7 @@
 		6E996B1C25D04B8600126375 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		6EAC030F25B9B51700B4921E /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		6EAC89FA25B7720400DD3B0C /* PexesoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoViewModel.swift; sourceTree = "<group>"; };
-		6EAE5C9025B70FA600FEEF12 /* test-tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EAD789A25F68B9800AFE6FD /* test-tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EAE5C9325B70FA600FEEF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EAE5C9725B70FA600FEEF12 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		6EAE5C9A25B70FA600FEEF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TestTasksList.storyboard; sourceTree = "<group>"; };
@@ -117,10 +132,6 @@
 		6EBC38B725B8A15E0022031C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6EBC38BB25B8B9980022031C /* Array + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extension.swift"; sourceTree = "<group>"; };
 		6EBC38C125B8CDAD0022031C /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
-		8A061C77B22E47750ED7FF68 /* Pods-test-tasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test-tasks.debug.xcconfig"; path = "Target Support Files/Pods-test-tasks/Pods-test-tasks.debug.xcconfig"; sourceTree = "<group>"; };
-		8DAAA6769D9417DDFB0D4549 /* Pods-simple-memory-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-memory-game.release.xcconfig"; path = "Target Support Files/Pods-simple-memory-game/Pods-simple-memory-game.release.xcconfig"; sourceTree = "<group>"; };
-		C23A1AD4EC66C01C9BDB6BD6 /* Pods_test_tasks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_tasks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB174DE4069240D5FA91BF97 /* Pods-simple-memory-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-memory-game.debug.xcconfig"; path = "Target Support Files/Pods-simple-memory-game/Pods-simple-memory-game.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +139,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24F6C2F88BADD0188F2C160E /* Pods_test_tasks.framework in Frameworks */,
+				6EAD788625F6542C00AFE6FD /* SFSafeSymbols in Frameworks */,
+				6EAD787825F651E900AFE6FD /* NeedleFoundation in Frameworks */,
+				6EAD788C25F6566200AFE6FD /* SwiftyBeaver in Frameworks */,
+				6EAD789825F681DA00AFE6FD /* MoyaNetworkClient-Combine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,18 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				6EAE5C9225B70FA600FEEF12 /* test-tasks */,
-				6EAE5C9125B70FA600FEEF12 /* Products */,
-				C636E4D3F1BD3A745C023318 /* Pods */,
-				A5BF802B76C59EF90CE17659 /* Frameworks */,
+				6EAD789A25F68B9800AFE6FD /* test-tasks.app */,
 			);
-			sourceTree = "<group>";
-		};
-		6EAE5C9125B70FA600FEEF12 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6EAE5C9025B70FA600FEEF12 /* test-tasks.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		6EAE5C9225B70FA600FEEF12 /* test-tasks */ = {
@@ -437,25 +441,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		A5BF802B76C59EF90CE17659 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C23A1AD4EC66C01C9BDB6BD6 /* Pods_test_tasks.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C636E4D3F1BD3A745C023318 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CB174DE4069240D5FA91BF97 /* Pods-simple-memory-game.debug.xcconfig */,
-				8DAAA6769D9417DDFB0D4549 /* Pods-simple-memory-game.release.xcconfig */,
-				8A061C77B22E47750ED7FF68 /* Pods-test-tasks.debug.xcconfig */,
-				083149DDB28CEA6722842D7F /* Pods-test-tasks.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,20 +448,25 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6EAE5CA425B70FA700FEEF12 /* Build configuration list for PBXNativeTarget "test-tasks" */;
 			buildPhases = (
-				A9F57851671A509B586BEFB7 /* [CP] Check Pods Manifest.lock */,
 				6EAE5C8C25B70FA600FEEF12 /* Sources */,
 				6EAE5C8D25B70FA600FEEF12 /* Frameworks */,
 				6EAE5C8E25B70FA600FEEF12 /* Resources */,
-				5A0B4A7EFF489C15D8BD99F3 /* [CP] Embed Pods Frameworks */,
 				6EBC382C25B87BC20022031C /* Needle */,
+				6EAD788325F653BA00AFE6FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "test-tasks";
+			packageProductDependencies = (
+				6EAD787725F651E900AFE6FD /* NeedleFoundation */,
+				6EAD788525F6542C00AFE6FD /* SFSafeSymbols */,
+				6EAD788B25F6566200AFE6FD /* SwiftyBeaver */,
+				6EAD789725F681DA00AFE6FD /* MoyaNetworkClient-Combine */,
+			);
 			productName = "simple-memory-game";
-			productReference = 6EAE5C9025B70FA600FEEF12 /* test-tasks.app */;
+			productReference = 6EAD789A25F68B9800AFE6FD /* test-tasks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -502,7 +492,13 @@
 				Base,
 			);
 			mainGroup = 6EAE5C8725B70FA600FEEF12;
-			productRefGroup = 6EAE5C9125B70FA600FEEF12 /* Products */;
+			packageReferences = (
+				6EAD787625F651E900AFE6FD /* XCRemoteSwiftPackageReference "needle" */,
+				6EAD788425F6542C00AFE6FD /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				6EAD788A25F6566200AFE6FD /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+				6EAD789625F681DA00AFE6FD /* XCRemoteSwiftPackageReference "MoyaNetworkClient-Combine" */,
+			);
+			productRefGroup = 6EAE5C8725B70FA600FEEF12;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -528,23 +524,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5A0B4A7EFF489C15D8BD99F3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-test-tasks/Pods-test-tasks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-test-tasks/Pods-test-tasks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test-tasks/Pods-test-tasks-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6EBC382C25B87BC20022031C /* Needle */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -562,28 +541,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which needle > /dev/null; then\n    needle\nelse\n    echo \"warning: Needle not installed, download it from https://github.com/uber/needle\"\nfi\nneedle generate $SRCROOT/$TARGETNAME/NeedleGenerated.swift $SRCROOT/$TARGETNAME\n";
-		};
-		A9F57851671A509B586BEFB7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-test-tasks-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -780,7 +737,6 @@
 		};
 		6EAE5CA525B70FA700FEEF12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A061C77B22E47750ED7FF68 /* Pods-test-tasks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -802,7 +758,6 @@
 		};
 		6EAE5CA625B70FA700FEEF12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 083149DDB28CEA6722842D7F /* Pods-test-tasks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -844,6 +799,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6EAD787625F651E900AFE6FD /* XCRemoteSwiftPackageReference "needle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/needle.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.17.1;
+			};
+		};
+		6EAD788425F6542C00AFE6FD /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/piknotech/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+		6EAD788A25F6566200AFE6FD /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.3;
+			};
+		};
+		6EAD789625F681DA00AFE6FD /* XCRemoteSwiftPackageReference "MoyaNetworkClient-Combine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Peeoner174/MoyaNetworkClient-Combine";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6EAD787725F651E900AFE6FD /* NeedleFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EAD787625F651E900AFE6FD /* XCRemoteSwiftPackageReference "needle" */;
+			productName = NeedleFoundation;
+		};
+		6EAD788525F6542C00AFE6FD /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EAD788425F6542C00AFE6FD /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+		6EAD788B25F6566200AFE6FD /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EAD788A25F6566200AFE6FD /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
+		};
+		6EAD789725F681DA00AFE6FD /* MoyaNetworkClient-Combine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EAD789625F681DA00AFE6FD /* XCRemoteSwiftPackageReference "MoyaNetworkClient-Combine" */;
+			productName = "MoyaNetworkClient-Combine";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6EAE5C8825B70FA600FEEF12 /* Project object */;
 }

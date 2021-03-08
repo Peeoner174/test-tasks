@@ -15,7 +15,9 @@ class Button: UIButton, UserInteractionHandler {
         }
     }
     
-    func handle(controlEvents: UIControl.Event) { }
+    func handle(controlEvents: UIControl.Event) {
+        self.nextHandler?.handle(controlEvents: controlEvents)
+    }
     
     @IBInspectable var fontStyle: String = "regular" {
         didSet {

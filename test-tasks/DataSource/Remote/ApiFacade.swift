@@ -6,6 +6,7 @@
 //
 
 import MoyaNetworkClient_Combine
+import Foundation
 
 struct ApiFacade {
     static let networkClient = NetworkClient(jsonDecoder: JSONDecoder())

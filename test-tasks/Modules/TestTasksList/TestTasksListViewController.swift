@@ -9,6 +9,10 @@ import UIKit
 
 class TestTasksListViewController: ViewController {
     weak var coordinator: TestTasksListCoordinator!
+    
+    @IBAction func pexesoAction(_ sender: Any) {
+        handle(.pexeso)
+    }
 }
 
 extension TestTasksListViewController: TestTasksListNavigationHandler {

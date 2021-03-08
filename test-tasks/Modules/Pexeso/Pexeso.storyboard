@@ -108,57 +108,6 @@
             </objects>
             <point key="canvasLocation" x="-972" y="69.715142428785612"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hOo-Nu-Nb6">
-            <objects>
-                <viewController id="AXV-cu-Daw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N0g-Dq-qM5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-Ij-gcS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="bottom" semanticContentAttribute="forceRightToLeft" distribution="equalCentering" alignment="lastBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="zah-sP-zpZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
-                                        <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KvH-9Z-LC9">
-                                                <rect key="frame" x="326" y="0.0" width="51" height="31"/>
-                                            </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DpN-zR-B2b">
-                                                <rect key="frame" x="163" y="0.0" width="51" height="31"/>
-                                            </switch>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALG-2V-97a">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NiA-Iq-Dgc">
-                                        <rect key="frame" x="0.0" y="167" width="375" height="166.5"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6u-S5-VBP">
-                                        <rect key="frame" x="0.0" y="333.5" width="375" height="167"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xv1-V5-x6a">
-                                        <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="gCK-1k-XNX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="gCK-1k-XNX" firstAttribute="bottom" secondItem="F8k-Ij-gcS" secondAttribute="bottom" id="N8q-QG-fx7"/>
-                            <constraint firstItem="F8k-Ij-gcS" firstAttribute="top" secondItem="gCK-1k-XNX" secondAttribute="top" id="cWa-c2-5ky"/>
-                            <constraint firstItem="gCK-1k-XNX" firstAttribute="trailing" secondItem="F8k-Ij-gcS" secondAttribute="trailing" id="fWK-9P-kyY"/>
-                            <constraint firstItem="F8k-Ij-gcS" firstAttribute="leading" secondItem="gCK-1k-XNX" secondAttribute="leading" id="nGZ-AB-a3l"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ik-Eg-iaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1150" y="-627"/>
-        </scene>
     </scenes>
     <resources>
         <image name="play.circle" catalog="system" width="128" height="121"/>
