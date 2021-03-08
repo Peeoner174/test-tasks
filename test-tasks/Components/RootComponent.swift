@@ -52,8 +52,7 @@ private class DIContainerImpl: DIContainer, DIStorable {
         ObjectIdentifier(PexesoComponent.self) : \DIStorable.rootComponent.pexesoComponent,
         ObjectIdentifier(TestTaskListComponent.self) : \DIStorable.rootComponent.testTaskListComponent,
         ObjectIdentifier(RootComponent.self) : \DIStorable.rootComponent,
-        ObjectIdentifier(AppCoordinator.self) : \DIStorable.rootComponent.appCoordinator,
-        ObjectIdentifier(LogService.self) : \DIStorable.rootComponent.logger
+        ObjectIdentifier(AppCoordinator.self) : \DIStorable.rootComponent.appCoordinator
     ]
         
     func resolve<Type>(_ type: Type.Type) -> Type {
@@ -74,7 +73,6 @@ protocol RootComponent: Scope {
     var pexesoComponent: PexesoComponent { get }
     var testTaskListComponent: TestTaskListComponent { get }
     var appCoordinator: AppCoordinator { get }
-    var logger: LogService { get }
 }
 
 class RootComponentImpl: BootstrapComponent, RootComponent {
@@ -114,15 +112,4 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
         }
         return shared(appCoordinatorFactory)
     }
-    
-    // MARK: Services
-    
-    var logger: LogService {
-        return shared { LogServiceSwiftyBeaver() }
-    }
 }
-
-// MARK: Global Services
-
-let logger: LogService = sharedDIContainer.resolve(LogService.self)
-

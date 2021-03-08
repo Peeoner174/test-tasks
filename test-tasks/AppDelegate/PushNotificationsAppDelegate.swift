@@ -26,9 +26,9 @@ class PushNotificationsAppDelegate: AppDelegateType {
         
         if let notification = launchOptions?[.remoteNotification] as? [String : Any] {
             if let aps = notification["aps"] as? [String : Any] {
-                logger.info(LogMessage("App did launched from notification with aps: \n\(aps)"))
+                logger.info("App did launched from notification with aps: \n\(aps)")
             } else {
-                logger.error(LogMessage("Attempt cast notification data failed"))
+                logger.error("Attempt cast notification data failed")
             }
         }
             
@@ -37,15 +37,15 @@ class PushNotificationsAppDelegate: AppDelegateType {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         guard let aps = userInfo["aps"] as? [String : Any] else {
-            logger.error(LogMessage("Attempt cast notification data failed"))
+            logger.error("Attempt cast notification data failed")
             completionHandler(.failed)
             return
         }
         if aps["content-available"] as? Int == 1 {
-            logger.info(LogMessage("App did receive silent notification with aps: \n\(aps)"))
+            logger.info("App did receive silent notification with aps: \n\(aps)")
             
         } else {
-            logger.info(LogMessage("App did receive notification with aps: \n\(aps)"))
+            logger.info("App did receive notification with aps: \n\(aps)")
         }
         completionHandler(.noData)
     }
@@ -53,7 +53,7 @@ class PushNotificationsAppDelegate: AppDelegateType {
     func registerForPushNotifications() {
         UNUserNotificationCenter.current()
             .requestAuthorization(options: [.alert, .badge, .sound]) { [weak self] granted, _ in
-                logger.info(LogMessage("Permission granted: \(granted)"))
+                logger.info("Permission granted: \(granted)")
                 guard granted else { return }
                 
                 let viewAction = UNNotificationAction(
@@ -77,7 +77,7 @@ class PushNotificationsAppDelegate: AppDelegateType {
     
     func getNotificationSettings() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
-            logger.info(LogMessage("Notification settings: \(settings)"))
+            logger.info("Notification settings: \(settings)")
             guard settings.authorizationStatus == .authorized else { return }
             DispatchQueue.main.async {
                 UIApplication.shared.registerForRemoteNotifications()
@@ -88,11 +88,11 @@ class PushNotificationsAppDelegate: AppDelegateType {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenPairs = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenPairs.joined()
-        logger.info(LogMessage("Device Token: \(token)"))
+        logger.info("Device Token: \(token)")
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        logger.error(LogMessage("Failed to register: \(error)"))
+        logger.error("Failed to register: \(error)")
     }
 }
 
@@ -101,25 +101,25 @@ extension PushNotificationsAppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         guard let aps = notification.request.content.userInfo["aps"] as? [String : Any] else {
-            logger.error(LogMessage("Attempt cast notification data failed"))
+            logger.error("Attempt cast notification data failed")
             completionHandler([])
             return
         }
-        logger.info(LogMessage(
+        logger.info(
             "Did receive notification in App-foreground with aps: \n\(aps)"
-        ))
+        )
         completionHandler([.alert])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         guard let aps = response.notification.request.content.userInfo["aps"] else {
-            logger.error(LogMessage("Attempt cast notification data failed"))
+            logger.error("Attempt cast notification data failed")
             completionHandler()
             return
         }
     
         if response.actionIdentifier == Identifiers.viewAction {
-            logger.info(LogMessage("Action with id: \(Identifiers.viewAction) was tapped on notification with aps: \n\(aps)"))
+            logger.info("Action with id: \(Identifiers.viewAction) was tapped on notification with aps: \n\(aps)")
         }
         completionHandler()
     }
