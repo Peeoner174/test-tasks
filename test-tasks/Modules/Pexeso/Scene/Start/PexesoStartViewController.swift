@@ -12,7 +12,7 @@ class PexesoStartViewController: ViewController {
     private var bindings = Set<AnyCancellable>()
     
     let viewModel: PexesoViewModel
-    weak var coordinator: PexesoCoordinator!
+    weak var coordinator: PexesoStartCoordinator!
     
     init?(coder: NSCoder, viewModel: PexesoViewModel) {
         self.viewModel = viewModel
@@ -64,14 +64,12 @@ class PexesoStartViewController: ViewController {
 
 // MARK: - Perform Routing
 
-extension PexesoStartViewController: PexesoNavigationHandler {
-    func handle(_ navigation: PexesoNavigation) {
-        coordinator.getViewControllerAndRoute(navigation) { drawable, router in
+extension PexesoStartViewController: PexesoStartNavigationHandler {
+    func handle(_ navigation: PexesoStartNavigation) {
+        coordinator.goTo(navigation) { drawable, router in
             switch navigation {
             case .game:
                 router.presentAsStork(drawable, isAnimated: true, onDismiss: nil)
-            case .start:
-                break
             }
         }
     }

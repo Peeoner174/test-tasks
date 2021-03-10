@@ -8,10 +8,11 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, AppCoordinatorResolver {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var appDelegate = AppDelegateFactory.makeDefault(self.window)
     var window: UIWindow?
+    @Injected(\.appCoordinator) var appCoordinator: AppCoordinator
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         _ = appDelegate.application?(application, willFinishLaunchingWithOptions: launchOptions)
@@ -21,9 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppCoordinatorResolver {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
-    
+        
         logger.start()
         _ = appDelegate.application?(application, didFinishLaunchingWithOptions: launchOptions)
+        
         appCoordinator.start()
         
         return true

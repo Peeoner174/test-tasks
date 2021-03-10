@@ -7,15 +7,18 @@
 
 import UIKit
 
-class BaseCoordinator : Coordinator {
+class BaseCoordinator: Coordinator, Drawable {
+    var navigationController: NavigationController?
     var childCoordinators : [Coordinator] = []
 
-    var isCompleted: (() -> ())?
+    var isCompleted: (() -> Void)?
     
     func start() {
         fatalError("Children should implement `start`.")
     }
+    
+    var viewController: ViewController? {
+        fatalError("Children should implement viewController")
+    }
 }
-
-extension BaseCoordinator: Injector {}
 

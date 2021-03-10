@@ -9,23 +9,20 @@ import NeedleFoundation
 
 protocol PexesoModuleDependency: Dependency {
     var pexesoViewModel: PexesoViewModel { get }
-    var pexesoCoordinator: PexesoCoordinator { get }
 }
 
 class PexesoComponent: Component<PexesoModuleDependency> {
     
-    var startViewController: StartViewController {
-        let vc = StartViewController.instantiate(fromStoryboard: .pexeso)
-        vc.viewModel = dependency.pexesoViewModel
-        vc.coordinator = dependency.pexesoCoordinator
-        return vc
+    var startViewController: PexesoStartViewController {
+        .instantiate(fromStoryboard: .pexeso) { coder in
+            PexesoStartViewController(coder: coder, viewModel: self.dependency.pexesoViewModel)
+        }
     }
     
-    var gameViewController: GameViewController {
-        let vc = GameViewController.instantiate(fromStoryboard: .pexeso)
-        vc.viewModel = dependency.pexesoViewModel
-        vc.coordinator = dependency.pexesoCoordinator
-        return vc
+    var gameViewController: PexesoGameViewController {
+        .instantiate(fromStoryboard: .pexeso) { coder in
+            PexesoGameViewController(coder: coder, viewModel: self.dependency.pexesoViewModel)
+        }
     }
 }
 

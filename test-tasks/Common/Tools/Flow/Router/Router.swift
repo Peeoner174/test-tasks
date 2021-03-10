@@ -7,9 +7,13 @@
 
 import UIKit
 
-typealias NavigationBackClosure = (() -> ())
+typealias NavigationBackClosure = (() -> Void)
 
 protocol Router: class {
+    var navigationController: NavigationController? { get set }
+    
+    init(navigationController: NavigationController?)
+    
     func push(_ viewController: Drawable, isAnimated: Bool, onNavigateBack: NavigationBackClosure?)
     func pop(_ isAnimated: Bool)
     func popToRoot(_ isAnimated: Bool)
@@ -19,16 +23,15 @@ protocol Router: class {
     func dismiss(animated: Bool, completion: DismissClosure?)
 }
 
-public protocol Navigation {}
-
 class RouterImpl: NSObject, Router {
-    let navigationController: NavigationController
+    
+    var navigationController: NavigationController?
     private var closures: [String: NavigationBackClosure] = [:]
     
-    init(navigationController: NavigationController) {
-        self.navigationController = navigationController
+    required init(navigationController: NavigationController?) {
         super.init()
-        self.navigationController.delegate = self
+        self.navigationController = navigationController
+        self.navigationController?.delegate = self
     }
     
     func push(_ drawable: Drawable, isAnimated: Bool, onNavigateBack closure: NavigationBackClosure?) {
@@ -38,7 +41,7 @@ class RouterImpl: NSObject, Router {
             closures.updateValue(closure, forKey: viewController.description)
         }
         
-        navigationController.pushViewController(viewController, animated: isAnimated)
+        navigationController?.pushViewController(viewController, animated: isAnimated)
     }
     
     func show(_ drawable: Drawable, onNavigateBack closure: NavigationBackClosure?) {
@@ -48,38 +51,38 @@ class RouterImpl: NSObject, Router {
             closures.updateValue(closure, forKey: viewController.description)
         }
         
-        navigationController.show(viewController, sender: nil)
+        navigationController?.show(viewController, sender: nil)
     }
     
     func pop(_ isAnimated: Bool) {
-        navigationController.popViewController(animated: isAnimated)
+        navigationController?.popViewController(animated: isAnimated)
     }
     
     func dismiss(animated: Bool, completion: DismissClosure?) {
-        navigationController.dismiss(animated: animated, completion: completion)
+        navigationController?.dismiss(animated: animated, completion: completion)
     }
     
     func popToRoot(_ isAnimated: Bool) {
-        navigationController.popToRootViewController(animated: isAnimated)
+        navigationController?.popToRootViewController(animated: isAnimated)
     }
     
     func presentAsStork(_ drawable: Drawable, isAnimated: Bool, onDismiss closure: DismissClosure?) {
         guard let viewController = drawable.viewController else { return }
         
         if let closure = closure {
-            navigationController.closures.updateValue(closure, forKey: viewController.description)
+            navigationController?.closures.updateValue(closure, forKey: viewController.description)
         }
 
         viewController.modalPresentationStyle = .popover
-        navigationController.present(viewController, animated: true, completion: nil)
+        navigationController?.present(viewController, animated: true, completion: nil)
     }
     
     func presentAsRoot(_ drawable: Drawable, isAnimated: Bool, setNavigationBarHidden navigationBarIsHidden: Bool) {
         guard let viewController = drawable.viewController else { return }
         
-        navigationController.setViewControllers([viewController], animated: isAnimated)
-        navigationController.navigationBar.isHidden = false
-        navigationController.setNavigationBarHidden(navigationBarIsHidden, animated: true)
+        navigationController?.setViewControllers([viewController], animated: isAnimated)
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.setNavigationBarHidden(navigationBarIsHidden, animated: true)
     }
     
     private func executeClosure(_ viewController: UIViewController) {

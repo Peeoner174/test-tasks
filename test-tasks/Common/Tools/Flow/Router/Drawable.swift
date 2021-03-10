@@ -8,10 +8,10 @@
 import UIKit
 
 protocol Drawable {
-    var viewController: UIViewController? { get }
+    var viewController: ViewController? { get }
 }
 
-extension UIViewController: Drawable {
-    var viewController: UIViewController? { return self }
+extension ViewController: Drawable {
+    var viewController: ViewController? { return self }
 }
 

@@ -7,26 +7,13 @@
 
 import UIKit
 
-typealias DismissClosure = (() -> ())
+typealias DismissClosure = (() -> Void)
 
 class NavigationController: UINavigationController {
     var closures: [String: DismissClosure] = [:]
     
     init() {
         super.init(nibName: nil, bundle: nil)
-    }
-    
-    public override init(rootViewController: UIViewController) {
-        super.init(rootViewController: rootViewController)
-    
-        guard let vc = rootViewController as? ViewController else { return }
-        
-        if let title = vc.navigationItemTitle {
-            vc.title = title
-        }
-        if let backBarButtonItemTitle = vc.navigationItemBackBtnTitle {
-            vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: backBarButtonItemTitle, style: .plain, target: nil, action: nil)
-        }
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {

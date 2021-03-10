@@ -5,10 +5,12 @@
 //  Created by MSI on 20.01.2021.
 //
 
-import Foundation
+import UIKit
 
-protocol Coordinator : class {
+protocol Coordinator: class, Drawable {
     var childCoordinators : [Coordinator] { get set }
+    var navigationController: NavigationController? { get set }
+
     func start()
 }
 

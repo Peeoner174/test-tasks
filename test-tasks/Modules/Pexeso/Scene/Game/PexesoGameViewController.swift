@@ -8,12 +8,21 @@
 import UIKit
 import Combine
 
-class GameViewController: ViewController {
+class PexesoGameViewController: ViewController {
     private var bindings = Set<AnyCancellable>()
     
-    weak var viewModel: PexesoViewModel!
-    weak var coordinator: PexesoCoordinator!
+    let viewModel: PexesoViewModel
+    weak var coordinator: PexesoGameCoordinator!
     
+    init?(coder: NSCoder, viewModel: PexesoViewModel) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+        
     // MARK: - UI Properties
     
     @IBOutlet weak var cardsHolderView: CardsHolderView!
@@ -36,7 +45,7 @@ class GameViewController: ViewController {
 
 // MARK: - CardsHolderViewDelegate
 
-extension GameViewController: CardsHolderViewDelegate {
+extension PexesoGameViewController: CardsHolderViewDelegate {
     func restartButtonTapped() {
         viewModel.getCards()
     }
@@ -44,12 +53,10 @@ extension GameViewController: CardsHolderViewDelegate {
 
 // MARK: - Perform Routing
 
-extension GameViewController: PexesoNavigationHandler {
-    func handle(_ navigation: PexesoNavigation) {
-        coordinator.getViewControllerAndRoute(navigation) { drawable, router in
+extension PexesoGameViewController: PexesoGameNavigationHandler {
+    func handle(_ navigation: PexesoGameNavigation) {
+        coordinator.goTo(navigation) { drawable, router in
             switch navigation {
-            case .game:
-                break
             case .start:
                 router.dismiss(animated: true, completion: nil)
             }

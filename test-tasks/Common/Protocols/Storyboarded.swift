@@ -11,8 +11,8 @@ protocol Storyboarded { }
 
 extension Storyboarded where Self: UIViewController {
 
-    static func instantiate(fromStoryboard storyboard: UIStoryboard) -> Self {
-        return storyboard.instantiateViewController(withIdentifier: self.reuseIdentifier) as! Self
+    static func instantiate(fromStoryboard storyboard: UIStoryboard, creator: ((NSCoder) -> Self?)?) -> Self {
+        return storyboard.instantiateViewController(identifier: self.reuseIdentifier, creator: creator) 
     }
 }
 
