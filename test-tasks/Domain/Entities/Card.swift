@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Card: Codable {
+struct Card: Equatable {
     let refKey: Int
     var isFlipped: Bool
     var image: String?
@@ -18,9 +18,5 @@ struct Card: Codable {
         self.isFlipped = isFlipped
         self.image = image
         self.isClickable = isClickable
-    }
-    
-    enum CodingKeys: CodingKey {
-        case isFlipped, image, isClickable, refKey
     }
 }

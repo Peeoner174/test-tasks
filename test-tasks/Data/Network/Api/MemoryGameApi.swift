@@ -5,7 +5,6 @@
 //  Created by MSI on 20.01.2021.
 //
 
-// Это мой самописный фреймворк для работы с сетью ( https://github.com/Peeoner174/MoyaNetworkClient-Combine )
 import MoyaNetworkClient_Combine
 import Foundation
 
