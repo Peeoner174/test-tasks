@@ -5,6 +5,8 @@
 //  Created by Pavel Kochenda on 10.03.2021.
 //
 
+import Combine
+
 enum PexesoStartNavigation {
     case game
 }
@@ -14,16 +16,24 @@ protocol PexesoStartNavigationHandler: PexesoStartViewController {
 }
 
 class PexesoStartCoordinator: BaseCoordinator {
+    private var bindings = Set<AnyCancellable>()
+
     @Injected(\.pexesoComponent.startViewController) var rootViewController: PexesoStartViewController
-    let router: Router
+    private(set) var router: Router!
         
     init(router: Router) {
         self.router = router
         super.init()
     }
     
-    override func start() {
+    override init() {
+        super.init()
+        self.router = RouterImpl(navigationController: NavigationController(rootViewController: self.rootViewController))
+    }
+    
+    override func start() -> AnyPublisher<Void, Never> {
         rootViewController.coordinator = self
+        return rootViewController.didDisappear
     }
     
     override var viewController: ViewController? {
@@ -37,7 +47,13 @@ class PexesoStartCoordinator: BaseCoordinator {
             coordinator = PexesoGameCoordinator(router: RouterImpl(navigationController: router.navigationController))
         }
         store(coordinator: coordinator)
-        coordinator.start()
+        
+        let coordinatorFinish = coordinator.start().handleEvents(receiveCompletion: { [weak self] _ in
+            guard let self = self else { return }
+            self.free(coordinator: coordinator)
+        })
+        coordinatorFinish.sink().store(in: &bindings)
+        
         routeBlock(coordinator, router)
     }
 }

@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 protocol Coordinator: class, Drawable {
     var childCoordinators : [Coordinator] { get set }
-    var navigationController: NavigationController? { get set }
-
-    func start()
+    
+    func start() -> AnyPublisher<Void, Never>
 }
 
 extension Coordinator {

@@ -27,7 +27,6 @@
 		6EAE5C9825B70FA600FEEF12 /* PexesoGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE5C9725B70FA600FEEF12 /* PexesoGameViewController.swift */; };
 		6EAE5C9D25B70FA700FEEF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EAE5C9C25B70FA700FEEF12 /* Assets.xcassets */; };
 		6EAE5CA025B70FA700FEEF12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EAE5C9E25B70FA700FEEF12 /* LaunchScreen.storyboard */; };
-		6EAE8ADC25B7F5C700D0D926 /* Combine+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE8ADB25B7F5C700D0D926 /* Combine+Helpers.swift */; };
 		6EAFDFCB25B714DF007393DF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFDFC925B714DF007393DF /* CardView.swift */; };
 		6EAFDFD225B7152C007393DF /* ChainOfResponsibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFDFD125B7152C007393DF /* ChainOfResponsibility.swift */; };
 		6EAFDFD825B716C1007393DF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFDFD725B716C1007393DF /* Button.swift */; };
@@ -59,6 +58,7 @@
 		6EBC38B825B8A15E0022031C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC38B725B8A15E0022031C /* Fonts.swift */; };
 		6EBC38BC25B8B9980022031C /* Array + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC38BB25B8B9980022031C /* Array + Extension.swift */; };
 		6EBC38C225B8CDAD0022031C /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC38C125B8CDAD0022031C /* UIStackView + Extension.swift */; };
+		6ECC63D525FA746E001C9903 /* Publisher + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC63D425FA746E001C9903 /* Publisher + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,7 +94,6 @@
 		6EAE5C9C25B70FA700FEEF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EAE5C9F25B70FA700FEEF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EAE5CA125B70FA700FEEF12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6EAE8ADB25B7F5C700D0D926 /* Combine+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Helpers.swift"; sourceTree = "<group>"; };
 		6EAFDFC925B714DF007393DF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		6EAFDFD125B7152C007393DF /* ChainOfResponsibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainOfResponsibility.swift; sourceTree = "<group>"; };
 		6EAFDFD725B716C1007393DF /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -126,6 +125,7 @@
 		6EBC38B725B8A15E0022031C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6EBC38BB25B8B9980022031C /* Array + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extension.swift"; sourceTree = "<group>"; };
 		6EBC38C125B8CDAD0022031C /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		6ECC63D425FA746E001C9903 /* Publisher + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,7 +276,6 @@
 				6EBC380A25B879A70022031C /* Flow */,
 				6EAFDFF125B72890007393DF /* UI */,
 				6EAFDFDB25B717BB007393DF /* Assert + Unimplemented.swift */,
-				6EAE8ADB25B7F5C700D0D926 /* Combine+Helpers.swift */,
 				6EBC381A25B87A780022031C /* CompletionBlocks.swift */,
 				6EAC030F25B9B51700B4921E /* Pair.swift */,
 			);
@@ -387,6 +386,7 @@
 		6EBC382325B87B1B0022031C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6ECC63D325FA7464001C9903 /* Combine */,
 				6EBC382425B87B2A0022031C /* UINavigationController + Extension.swift */,
 				6EBC38BB25B8B9980022031C /* Array + Extension.swift */,
 				6EBC38C125B8CDAD0022031C /* UIStackView + Extension.swift */,
@@ -438,6 +438,14 @@
 				6EBC38B725B8A15E0022031C /* Fonts.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6ECC63D325FA7464001C9903 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				6ECC63D425FA746E001C9903 /* Publisher + Extension.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +564,7 @@
 				6EBC384B25B881550022031C /* CompositeAppDelegate.swift in Sources */,
 				6EAFDFD825B716C1007393DF /* Button.swift in Sources */,
 				6EBC382525B87B2A0022031C /* UINavigationController + Extension.swift in Sources */,
+				6ECC63D525FA746E001C9903 /* Publisher + Extension.swift in Sources */,
 				6EBC384525B87F420022031C /* Storyboards.swift in Sources */,
 				6EAE5C9825B70FA600FEEF12 /* PexesoGameViewController.swift in Sources */,
 				6EBC38B425B8A0530022031C /* Label.swift in Sources */,
@@ -568,7 +577,6 @@
 				6EBC384825B8813D0022031C /* AppDelegateFactory.swift in Sources */,
 				6EAE5C9425B70FA600FEEF12 /* AppDelegate.swift in Sources */,
 				6EAFDFE825B7269A007393DF /* Card.swift in Sources */,
-				6EAE8ADC25B7F5C700D0D926 /* Combine+Helpers.swift in Sources */,
 				6EBC383025B87C2D0022031C /* RootComponent.swift in Sources */,
 				6EBC38C225B8CDAD0022031C /* UIStackView + Extension.swift in Sources */,
 				6EBC381225B879E70022031C /* Coordinator.swift in Sources */,

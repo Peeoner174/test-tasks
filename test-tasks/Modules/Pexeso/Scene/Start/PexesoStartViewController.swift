@@ -55,7 +55,7 @@ class PexesoStartViewController: ViewController {
     // MARK: - Private methods
     
     private func bind(to viewModel: PexesoViewModelOutput) {
-        viewModel.level.assertNoFailure().sink { [weak self] in
+        viewModel.level.sink { [weak self] in
             guard let self = self else { return }
             self.selectedLevelLabel.setFormattedText(String($0))
         }.store(in: &bindings)

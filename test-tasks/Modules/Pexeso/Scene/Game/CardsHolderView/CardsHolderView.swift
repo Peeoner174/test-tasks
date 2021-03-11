@@ -40,7 +40,7 @@ class CardsHolderView: XibView {
         }
     }
     
-    private(set) var dataModel: CurrentValueSubject<[Card]> = .init([]) {
+    private(set) var dataModel: CurrentValueSubject<[Card], Error> = .init([]) {
         didSet {
             self.initCards()
             self.bindDataModel()
@@ -87,7 +87,11 @@ class CardsHolderView: XibView {
     
     // MARK: - Inits and configs methods
     
-    func configure(with cards: CurrentValueSubject<[Card]>, uiConfig: CardsHolderView.UI? = nil, delegate: CardsHolderViewDelegate? = nil) {
+    func configure(
+        with cards: CurrentValueSubject<[Card], Error>,
+        uiConfig: CardsHolderView.UI? = nil,
+        delegate: CardsHolderViewDelegate? = nil
+    ) {
         self.dataModel = cards
         self.uiConfig = uiConfig ?? CardsHolderView.UI()
         self.delegate = delegate

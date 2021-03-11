@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class BaseCoordinator: Coordinator, Drawable {
-    var navigationController: NavigationController?
-    var childCoordinators : [Coordinator] = []
-
     var isCompleted: (() -> Void)?
     
-    func start() {
+    var childCoordinators : [Coordinator] = []
+    
+    func start() -> AnyPublisher<Void, Never> {
         fatalError("Children should implement `start`.")
     }
     

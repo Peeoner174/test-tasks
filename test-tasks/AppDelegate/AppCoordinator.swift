@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class AppCoordinator: BaseCoordinator {
     let window : UIWindow
@@ -15,13 +16,19 @@ class AppCoordinator: BaseCoordinator {
         super.init()
     }
 
-    override func start() {
-        let pexesoStartCoordinator = PexesoStartCoordinator(router: RouterImpl(navigationController: NavigationController()))
-        store(coordinator: pexesoStartCoordinator)
-        pexesoStartCoordinator.start()
+    override func start() -> AnyPublisher<Void, Never> {
+        let coordinator = PexesoStartCoordinator()
+        store(coordinator: coordinator)
+                
+        let coordinatorFinish = coordinator.start().handleEvents(receiveCompletion: { [weak self] _ in
+            guard let self = self else { return }
+            self.free(coordinator: coordinator)
+        })
         
-        window.rootViewController = pexesoStartCoordinator.rootViewController
+        window.rootViewController = coordinator.router.navigationController
         window.makeKeyAndVisible()
+        
+        return coordinatorFinish.eraseToAnyPublisher()
     }
 }
 

@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
+    
+    lazy var didDisappear = _didDisappear.eraseToAnyPublisher()
+    private let _didDisappear = Combine.PassthroughSubject<Void, Never>()
     
     var navigationItemBackBtnTitle: String? {
         didSet {
@@ -25,6 +29,13 @@ class ViewController: UIViewController {
     }
     
     @objc func willEnterForegroundNotification(notification: NSNotification) { }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self._didDisappear.send()
+        self._didDisappear.send(completion: .finished)
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)

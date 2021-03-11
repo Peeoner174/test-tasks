@@ -11,6 +11,7 @@ import Alamofire
 
 import Foundation
 import SystemConfiguration
+import Combine
 
 /// The `NetworkReachabilityManager` class listens for reachability changes of hosts and addresses for both WWAN and
 /// WiFi network interfaces.
@@ -207,7 +208,7 @@ extension NetworkReachabilityManager.NetworkReachabilityStatus: Equatable {
 
 @available(iOS 13.0, *)
 protocol NetworkStatusSupplier: NetworkStatusListener {
-    var isInternetConnected: CurrentValueSubject<Bool> { get }
+    var isInternetConnected: CurrentValueSubject<Bool, Never> { get }
 }
 
 // MARK: -  Subscribers must conform to this protocol

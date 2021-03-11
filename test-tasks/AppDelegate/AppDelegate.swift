@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    private var bindings = Set<AnyCancellable>()
 
     lazy var appDelegate = AppDelegateFactory.makeDefault(self.window)
     var window: UIWindow?
@@ -27,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = appDelegate.application?(application, didFinishLaunchingWithOptions: launchOptions)
         
         self.appCoordinator = AppCoordinator(window: window!)
-        self.appCoordinator.start()
+        self.appCoordinator.start().sink().store(in: &bindings)
         
         return true
     }
