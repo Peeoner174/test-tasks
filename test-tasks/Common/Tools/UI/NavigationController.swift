@@ -16,6 +16,10 @@ class NavigationController: UINavigationController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    init(rootViewController: ViewController) {
+        super.init(rootViewController: rootViewController)
+    }
+    
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         super.dismiss(animated: flag, completion: completion)
         
