@@ -9,10 +9,9 @@ import UIKit
 
 protocol Storyboarded { }
 
-extension Storyboarded where Self: UIViewController {
-
+extension Storyboarded where Self: UIViewController {    
     static func instantiate(fromStoryboard storyboard: UIStoryboard, creator: ((NSCoder) -> Self?)?) -> Self {
-        return storyboard.instantiateViewController(identifier: self.reuseIdentifier, creator: creator) 
+        storyboard.instantiateViewController(identifier: self.reuseIdentifier, creator: creator)
     }
 }
 

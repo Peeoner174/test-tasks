@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		5C2D7D0C25F8FC3A00261174 /* PexesoGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0B25F8FC3A00261174 /* PexesoGameCoordinator.swift */; };
 		5C2D7D0E25F8FC5400261174 /* PexesoStartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */; };
-		5C2D7D1025F905FB00261174 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0F25F905FB00261174 /* NeedleGenerated.swift */; };
 		6E33C4C125B865990028E07D /* PexesoStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33C4C025B865990028E07D /* PexesoStartViewController.swift */; };
 		6E34089825B83EB700259B0F /* Pexeso.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E34089725B83EB700259B0F /* Pexeso.storyboard */; };
 		6E34089C25B83F5D00259B0F /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E34089B25B83F5D00259B0F /* XibView.swift */; };
 		6E3408A225B8407600259B0F /* ApiFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3408A125B8407600259B0F /* ApiFacade.swift */; };
 		6E3408A625B840CC00259B0F /* MemoryGameApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3408A525B840CC00259B0F /* MemoryGameApi.swift */; };
+		6E56577125F946BE00F5EE93 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E56577025F946BE00F5EE93 /* NeedleGenerated.swift */; };
 		6E996B0F25D0385900126375 /* PushNotificationsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */; };
 		6E996B1D25D04B8600126375 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B1C25D04B8600126375 /* LogService.swift */; };
 		6EAC031025B9B51700B4921E /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC030F25B9B51700B4921E /* Pair.swift */; };
@@ -77,12 +77,12 @@
 /* Begin PBXFileReference section */
 		5C2D7D0B25F8FC3A00261174 /* PexesoGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoGameCoordinator.swift; sourceTree = "<group>"; };
 		5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartCoordinator.swift; sourceTree = "<group>"; };
-		5C2D7D0F25F905FB00261174 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		6E33C4C025B865990028E07D /* PexesoStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartViewController.swift; sourceTree = "<group>"; };
 		6E34089725B83EB700259B0F /* Pexeso.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pexeso.storyboard; sourceTree = "<group>"; };
 		6E34089B25B83F5D00259B0F /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		6E3408A125B8407600259B0F /* ApiFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFacade.swift; sourceTree = "<group>"; };
 		6E3408A525B840CC00259B0F /* MemoryGameApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApi.swift; sourceTree = "<group>"; };
+		6E56577025F946BE00F5EE93 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsAppDelegate.swift; sourceTree = "<group>"; };
 		6E996B1425D03C2F00126375 /* test-tasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "test-tasks.entitlements"; sourceTree = "<group>"; };
 		6E996B1C25D04B8600126375 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				6E996B1425D03C2F00126375 /* test-tasks.entitlements */,
-				5C2D7D0F25F905FB00261174 /* NeedleGenerated.swift */,
+				6E56577025F946BE00F5EE93 /* NeedleGenerated.swift */,
 				6EBC384325B87F2A0022031C /* Resourses */,
 				6EBC383225B87C570022031C /* AppDelegate */,
 				6EBC382E25B87C180022031C /* Components */,
@@ -559,7 +559,7 @@
 				6EBC384525B87F420022031C /* Storyboards.swift in Sources */,
 				6EAE5C9825B70FA600FEEF12 /* PexesoGameViewController.swift in Sources */,
 				6EBC38B425B8A0530022031C /* Label.swift in Sources */,
-				5C2D7D1025F905FB00261174 /* NeedleGenerated.swift in Sources */,
+				6E56577125F946BE00F5EE93 /* NeedleGenerated.swift in Sources */,
 				6EBC382125B87AF20022031C /* ViewController.swift in Sources */,
 				6EBC38BC25B8B9980022031C /* Array + Extension.swift in Sources */,
 				6EBC381525B87A010022031C /* Router.swift in Sources */,

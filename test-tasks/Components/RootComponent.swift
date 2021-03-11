@@ -10,12 +10,14 @@ import UIKit
 
 protocol RootComponent: Scope {
     var pexesoComponent: PexesoComponent { get }
-    var appCoordinator: AppCoordinator { get }
 }
 
 class RootComponentImpl: BootstrapComponent, RootComponent {
     
-    private override init() {}
+    private override init() {
+        registerProviderFactories()
+        super.init()
+    }
     static let instance: RootComponentImpl = .init()
 
     // MARK: Pexeso
@@ -27,41 +29,38 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
     var pexesoViewModel: PexesoViewModel {
         shared { PexesoViewModelOfflineImpl(withLevel: 1, levelRange: 1...5) }
     }
-    
-    // MARK: Root
-    
-    var appCoordinator: AppCoordinator {
-        shared { AppCoordinator(window: (UIApplication.shared.delegate as! AppDelegate).window!) }
-    }
 }
 
 @propertyWrapper
 struct Subcomponent<Value: Scope> {
+    private var value: Value
+    
     var wrappedValue: Value {
-        RootComponentImpl.instance[keyPath: keyPath]
+        get { value }
+        mutating set { value = newValue }
     }
     
     private let keyPath: KeyPath<RootComponent, Value>
     
     init(_ keyPath: KeyPath<RootComponent, Value>) {
         self.keyPath = keyPath
+        self.value = RootComponentImpl.instance[keyPath: keyPath]
     }
 }
 
 @propertyWrapper
 struct Injected<Value> {
+    private var value: Value
+    
     var wrappedValue: Value {
-        RootComponentImpl.instance[keyPath: keyPath]
+        get { value }
+        mutating set { value = newValue }
     }
     
     private let keyPath: KeyPath<RootComponent, Value>
     
     init(_ keyPath: KeyPath<RootComponent, Value>) {
         self.keyPath = keyPath
+        self.value = RootComponentImpl.instance[keyPath: keyPath]
     }
 }
-
-
-
-
-

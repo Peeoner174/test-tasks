@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,13 +13,13 @@
         <!--Pexeso Game View Controller-->
         <scene sceneID="vrO-VR-1rA">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="MkN-nq-hJ5" customClass="PexesoGameViewController" customModule="test_tasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PexesoGameViewController" id="MkN-nq-hJ5" customClass="PexesoGameViewController" customModule="test_tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KDh-mL-uwE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cwy-xW-9ca" customClass="CardsHolderView" customModule="test_tasks" customModuleProvider="target">
-                                <rect key="frame" x="15" y="15" width="570" height="480"/>
+                                <rect key="frame" x="15" y="59" width="384" height="654.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -41,13 +43,13 @@
         <!--Pexeso Start View Controller-->
         <scene sceneID="gZu-BO-zwC">
             <objects>
-                <viewController storyboardIdentifier="StartViewController" id="vsD-n3-pEZ" customClass="PexesoStartViewController" customModule="test_tasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PexesoStartViewController" id="vsD-n3-pEZ" customClass="PexesoStartViewController" customModule="test_tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="imN-xk-ScQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PRx-JI-tPq">
-                                <rect key="frame" x="150" y="250" width="300" height="100"/>
+                                <rect key="frame" x="57" y="403" width="300" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7oi-Lh-BDb">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>

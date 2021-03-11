@@ -3,6 +3,9 @@
 import NeedleFoundation
 import UIKit
 
+// swiftlint:disable unused_declaration
+private let needleDependenciesHash : String? = nil
+
 // MARK: - Registration
 
 public func registerProviderFactories() {
@@ -17,13 +20,18 @@ public func registerProviderFactories() {
 
 // MARK: - Providers
 
-/// ^->RootComponentImpl->PexesoComponent
-private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependency {
+private class PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider: PexesoModuleDependency {
     var pexesoViewModel: PexesoViewModel {
         return rootComponentImpl.pexesoViewModel
     }
     private let rootComponentImpl: RootComponentImpl
+    init(rootComponentImpl: RootComponentImpl) {
+        self.rootComponentImpl = rootComponentImpl
+    }
+}
+/// ^->RootComponentImpl->PexesoComponent
+private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider {
     init(component: NeedleFoundation.Scope) {
-        rootComponentImpl = component.parent as! RootComponentImpl
+        super.init(rootComponentImpl: component.parent as! RootComponentImpl)
     }
 }

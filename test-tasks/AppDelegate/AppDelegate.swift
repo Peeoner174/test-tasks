@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var appDelegate = AppDelegateFactory.makeDefault(self.window)
     var window: UIWindow?
-    @Injected(\.appCoordinator) var appCoordinator: AppCoordinator
+    private var appCoordinator: AppCoordinator!
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         _ = appDelegate.application?(application, willFinishLaunchingWithOptions: launchOptions)
@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logger.start()
         _ = appDelegate.application?(application, didFinishLaunchingWithOptions: launchOptions)
         
-        appCoordinator.start()
+        self.appCoordinator = AppCoordinator(window: window!)
+        self.appCoordinator.start()
         
         return true
     }
