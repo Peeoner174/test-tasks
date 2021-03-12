@@ -12,7 +12,6 @@
 		6E33C4C125B865990028E07D /* PexesoStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33C4C025B865990028E07D /* PexesoStartViewController.swift */; };
 		6E34089825B83EB700259B0F /* Pexeso.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E34089725B83EB700259B0F /* Pexeso.storyboard */; };
 		6E34089C25B83F5D00259B0F /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E34089B25B83F5D00259B0F /* XibView.swift */; };
-		6E3408A225B8407600259B0F /* ApiFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3408A125B8407600259B0F /* ApiFacade.swift */; };
 		6E3408A625B840CC00259B0F /* MemoryGameApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3408A525B840CC00259B0F /* MemoryGameApi.swift */; };
 		6E996B0F25D0385900126375 /* PushNotificationsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */; };
 		6E996B1D25D04B8600126375 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B1C25D04B8600126375 /* LogService.swift */; };
@@ -82,7 +81,6 @@
 		6E33C4C025B865990028E07D /* PexesoStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartViewController.swift; sourceTree = "<group>"; };
 		6E34089725B83EB700259B0F /* Pexeso.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pexeso.storyboard; sourceTree = "<group>"; };
 		6E34089B25B83F5D00259B0F /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
-		6E3408A125B8407600259B0F /* ApiFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFacade.swift; sourceTree = "<group>"; };
 		6E3408A525B840CC00259B0F /* MemoryGameApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApi.swift; sourceTree = "<group>"; };
 		6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsAppDelegate.swift; sourceTree = "<group>"; };
 		6E996B1425D03C2F00126375 /* test-tasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "test-tasks.entitlements"; sourceTree = "<group>"; };
@@ -478,7 +476,6 @@
 		6ECC63EF25FAAC39001C9903 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				6E3408A125B8407600259B0F /* ApiFacade.swift */,
 				6E3408A425B840C200259B0F /* Api */,
 				6ECC63F025FAAC4A001C9903 /* DataMapping */,
 			);
@@ -654,7 +651,6 @@
 				6EAC89FB25B7720400DD3B0C /* PexesoViewModel.swift in Sources */,
 				6E34089C25B83F5D00259B0F /* XibView.swift in Sources */,
 				6EBC381825B87A1C0022031C /* Drawable.swift in Sources */,
-				6E3408A225B8407600259B0F /* ApiFacade.swift in Sources */,
 				6E996B1D25D04B8600126375 /* LogService.swift in Sources */,
 				6EBC381B25B87A780022031C /* CompletionBlocks.swift in Sources */,
 				6ECC63DC25FA988F001C9903 /* NeedleGenerated.swift in Sources */,

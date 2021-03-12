@@ -6,6 +6,7 @@
 //
 
 import NeedleFoundation
+import MoyaNetworkClient_Combine
 import UIKit
 
 protocol RootComponent: Scope {
@@ -19,6 +20,10 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
         super.init()
     }
     static let instance: RootComponentImpl = .init()
+    
+    var networkClient: NetworkClient {
+        shared { NetworkClient(jsonDecoder: JSONDecoder()) }
+    }
 
     // MARK: Pexeso
     
