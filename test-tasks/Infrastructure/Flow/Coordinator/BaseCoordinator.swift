@@ -9,7 +9,6 @@ import UIKit
 import Combine
 
 class BaseCoordinator: Coordinator, Drawable {
-    var isCompleted: (() -> Void)?
     
     var childCoordinators : [Coordinator] = []
     
