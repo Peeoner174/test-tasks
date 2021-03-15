@@ -208,7 +208,14 @@ extension NetworkReachabilityManager.NetworkReachabilityStatus: Equatable {
 
 @available(iOS 13.0, *)
 protocol NetworkStatusSupplier: NetworkStatusListener {
+    
     var isInternetConnected: CurrentValueSubject<Bool, Never> { get }
+}
+
+extension NetworkStatusSupplier {
+    var isInternetConnected: CurrentValueSubject<Bool, Never> {
+        .init(!ReachabilityManager.shared.isNoInternet)
+    }
 }
 
 // MARK: -  Subscribers must conform to this protocol
@@ -218,6 +225,10 @@ protocol NetworkStatusListener: class {
     /// - parameters:
     ///   - isReachable: Whether the network is currently reachable.
     func networkStatusDidChange(_ isReachable: Bool)
+}
+
+extension NetworkStatusListener {
+    func networkStatusDidChange(_ isReachable: Bool) {}
 }
 
 //MARK: -  Control ReachabilityManager via
@@ -288,6 +299,9 @@ extension ReachabilityManager {
     private func notify(status isReachable: Bool) {
         listeners.reversed().forEach { listener in
             listener.value?.networkStatusDidChange(isReachable)
+            if #available(iOS 13, *) {
+                (listener as? NetworkStatusSupplier)?.isInternetConnected.value = isReachable
+            }
         }
     }
     

@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NetworkStatusSupplier {
     private var bindings = Set<AnyCancellable>()
 
     lazy var appDelegate = AppDelegateFactory.makeDefault(self.window)
@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.appCoordinator = AppCoordinator(window: window!)
         self.appCoordinator.start().sink().store(in: &bindings)
+        
+        ReachabilityManager.shared.addListener(self)
         
         return true
     }

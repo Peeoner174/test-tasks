@@ -19,7 +19,7 @@ protocol Router: class {
     func popToRoot(_ isAnimated: Bool)
     func show(_ drawable: Drawable, onNavigateBack closure: NavigationBackClosure?)
     func presentAsRoot(_ drawable: Drawable, isAnimated: Bool, setNavigationBarHidden navigationBarIsHidden: Bool)
-    func presentAsStork(_ drawable: Drawable, isAnimated: Bool, onDismiss: EmptyBlock)
+    func presentAsStork(_ drawable: Drawable, isAnimated: Bool, onDismiss: VoidClosure?)
     func present(_ module: Drawable, animated: Bool)
     func dismiss(animated: Bool, completion: DismissClosure?)
 }
@@ -66,7 +66,7 @@ class RouterImpl: NSObject, Router {
         navigationController.popToRootViewController(animated: isAnimated)
     }
     
-    func presentAsStork(_ drawable: Drawable, isAnimated: Bool, onDismiss closure: DismissClosure?) {
+    func presentAsStork(_ drawable: Drawable, isAnimated: Bool, onDismiss closure: VoidClosure?) {
         guard let viewController = drawable.viewController else { return }
         
         if let closure = closure {
