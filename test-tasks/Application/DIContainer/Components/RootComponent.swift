@@ -11,6 +11,7 @@ import UIKit
 
 protocol RootComponent: Scope {
     var pexesoComponent: PexesoComponent { get }
+    var networkClient: NetworkClient { get }
 }
 
 class RootComponentImpl: BootstrapComponent, RootComponent {
