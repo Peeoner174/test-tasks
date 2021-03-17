@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1C52422601294B00EFC94A /* CardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C52412601294B00EFC94A /* CardsRepository.swift */; };
+		5C1C5245260129AE00EFC94A /* CardsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C5244260129AE00EFC94A /* CardsRepositoryImpl.swift */; };
 		5C2D7D0C25F8FC3A00261174 /* PexesoGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0B25F8FC3A00261174 /* PexesoGameCoordinator.swift */; };
 		5C2D7D0E25F8FC5400261174 /* PexesoStartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */; };
 		5CE7B8BF25FFB013009D2596 /* FetchRandomCardsPairsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7B8BE25FFB013009D2596 /* FetchRandomCardsPairsUseCase.swift */; };
@@ -77,6 +79,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5C1C52412601294B00EFC94A /* CardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRepository.swift; sourceTree = "<group>"; };
+		5C1C5244260129AE00EFC94A /* CardsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRepositoryImpl.swift; sourceTree = "<group>"; };
 		5C2D7D0B25F8FC3A00261174 /* PexesoGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoGameCoordinator.swift; sourceTree = "<group>"; };
 		5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartCoordinator.swift; sourceTree = "<group>"; };
 		5CE7B8BE25FFB013009D2596 /* FetchRandomCardsPairsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRandomCardsPairsUseCase.swift; sourceTree = "<group>"; };
@@ -147,6 +151,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C1C51E9260126DA00EFC94A /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				5C1C523F2601292B00EFC94A /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		5C1C523F2601292B00EFC94A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5C1C52412601294B00EFC94A /* CardsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5C1C5243260129A100EFC94A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5C1C5244260129AE00EFC94A /* CardsRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5C1C5246260129F100EFC94A /* PersistentStorages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersistentStorages;
+			sourceTree = "<group>";
+		};
 		5CE7B8BC25FFAFF0009D2596 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,7 +456,7 @@
 			children = (
 				6ECC63EA25FAA8FA001C9903 /* Entities */,
 				5CE7B8BC25FFAFF0009D2596 /* UseCases */,
-				6ECC63EC25FAAB42001C9903 /* Interfaces */,
+				5C1C51E9260126DA00EFC94A /* Interfaces */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -429,9 +464,9 @@
 		6ECC63E825FAA8A5001C9903 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				6ECC63EE25FAABDB001C9903 /* Repositories */,
+				5C1C5243260129A100EFC94A /* Repositories */,
 				6ECC63EF25FAAC39001C9903 /* Network */,
-				6ECC63F125FAAD05001C9903 /* PersistentStorages */,
+				5C1C5246260129F100EFC94A /* PersistentStorages */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -454,28 +489,6 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		6ECC63EC25FAAB42001C9903 /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-				6ECC63ED25FAAB9A001C9903 /* Repositories */,
-			);
-			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		6ECC63ED25FAAB9A001C9903 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		6ECC63EE25FAABDB001C9903 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
 		6ECC63EF25FAAC39001C9903 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,13 +503,6 @@
 			children = (
 			);
 			path = DataMapping;
-			sourceTree = "<group>";
-		};
-		6ECC63F125FAAD05001C9903 /* PersistentStorages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PersistentStorages;
 			sourceTree = "<group>";
 		};
 		6ECC63F225FAAE72001C9903 /* Utils */ = {
@@ -636,6 +642,7 @@
 				6EBC384B25B881550022031C /* CompositeAppDelegate.swift in Sources */,
 				6EAFDFD825B716C1007393DF /* Button.swift in Sources */,
 				6EBC382525B87B2A0022031C /* UINavigationController + Extension.swift in Sources */,
+				5C1C5245260129AE00EFC94A /* CardsRepositoryImpl.swift in Sources */,
 				6ECC63D525FA746E001C9903 /* Publisher + Extension.swift in Sources */,
 				6EBC384525B87F420022031C /* Storyboards.swift in Sources */,
 				6EAE5C9825B70FA600FEEF12 /* PexesoGameViewController.swift in Sources */,
@@ -654,6 +661,7 @@
 				6EAFDFE525B72530007393DF /* CardsHolderView.swift in Sources */,
 				6EAC89FB25B7720400DD3B0C /* PexesoViewModel.swift in Sources */,
 				6E34089C25B83F5D00259B0F /* XibView.swift in Sources */,
+				5C1C52422601294B00EFC94A /* CardsRepository.swift in Sources */,
 				6EBC381825B87A1C0022031C /* Drawable.swift in Sources */,
 				6E996B1D25D04B8600126375 /* LogService.swift in Sources */,
 				6EBC381B25B87A780022031C /* Typealias.swift in Sources */,

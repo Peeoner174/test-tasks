@@ -5,13 +5,25 @@
 //  Created by Pavel Kochenda on 15.03.2021.
 //
 
+import Combine
 
-protocol FetchRandomCardsPairsUseCase {
-    func execute(<#parameters#>) -> <#return type#> {
-    <#function body#>
-    }
-}
+enum FetchRandomCardsPairsError: Error {}
 
-class FetchRandomCardsPairsUseCaseImpl {
+final class FetchRandomCardsPairsUseCase {
+    typealias Publisher = AnyPublisher<ResultValue.Publisher.Output, ResultValue.Publisher.Failure>
     
+    struct RequestValue {
+        let numberOfPairs: Int
+    }
+    typealias ResultValue = Result<[Card], FetchRandomCardsPairsError>
+    
+    private let cardsRepository: CardsRepository
+    
+    init(cardsRepository: CardsRepository) {
+        self.cardsRepository = cardsRepository
+    }
+    
+    func execute(requestValue: RequestValue) -> Publisher {
+        cardsRepository.fetchRandomCards(quantity: requestValue.numberOfPairs)
+    }
 }

@@ -48,6 +48,13 @@ class PexesoGameViewController: ViewController {
 extension PexesoGameViewController: CardsHolderViewDelegate {
     func restartButtonTapped() {
         viewModel.getCards()
+        
+        
+        
+        
+        
+        
+            
     }
 }
 
