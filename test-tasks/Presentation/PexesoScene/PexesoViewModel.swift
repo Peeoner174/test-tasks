@@ -6,7 +6,7 @@
 //
 
 import Combine
-import SFSafeSymbols
+import UseCaseKit
 
 protocol PexesoViewModelInput {
     func getCards()
@@ -17,6 +17,7 @@ protocol PexesoViewModelOutput {
     var cards: CurrentValueSubject<[Card], Error> { get }
     var level: CurrentValueSubject<Int, Never> { get }
     var levelRange: ClosedRange<Int> { get }
+    var fetchCardsUseCase: UseCase<FetchCardsCommand> { get }
 }
 
 protocol PexesoViewModel: class, PexesoViewModelInput, PexesoViewModelOutput {}
@@ -28,6 +29,7 @@ class PexesoViewModelOfflineImpl: PexesoViewModel {
     
     private(set) var level: CurrentValueSubject<Int, Never>
     private(set) var cards: CurrentValueSubject<[Card], Error> = .init([])
+    private(set) var fetchCardsUseCase: UseCase<FetchCardsCommand> = .fetchCardsDefault()
     
     var levelRange: ClosedRange<Int>
     
@@ -43,30 +45,19 @@ class PexesoViewModelOfflineImpl: PexesoViewModel {
     }
     
     func getCards() {
-        func getRandomSymbolPairs(numberOfCards: Int) -> [SFSymbol] {
-            var array: [SFSymbol] = []
-            
-            for _ in stride(from: 0, to: numberOfCards, by: 2) {
-                let nextRandomSymbol = SFSymbol.allCases.randomElement() ?? SFSymbol.xCircle
-                array.append(contentsOf: [nextRandomSymbol, nextRandomSymbol])
-            }
-            return array.shuffled()
-        }
-        var cards: [Card] = []
-        for (index, symbol) in getRandomSymbolPairs(numberOfCards: 2 << level.value).enumerated() {
-            cards.append(Card(refKey: index, image: symbol.rawValue))
-        }
-        self.cards.value = cards
+        fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: 2 << level.value))
     }
 }
 
 class PexesoViewModelRestImpl: PexesoViewModel {
+    
     private var bindings = Set<AnyCancellable>()
     
     // MARK: - Business logic properties
     
     var level: CurrentValueSubject<Int, Never>
     var cards: CurrentValueSubject<[Card], Error> = .init([])
+    var fetchCardsUseCase: UseCase<FetchCardsCommand> = .fetchCardsDefault()
     
     var levelRange: ClosedRange<Int>
     

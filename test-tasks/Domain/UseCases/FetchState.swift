@@ -6,16 +6,18 @@
 //
 
 enum FetchState<ObjectType: Equatable>: Equatable {
-    /// статус - пустое состояние, объект только создан, данных  нет
+    /// Пустое состояние, объект только создан, данных  нет
     case unknown
-    /// статус - данные загружаются
+    /// Данные загружаются
     case loading
-    /// статус - есть данные
+    /// Есть данные
     case object(ObjectType)
-    /// статус - данных нет
+    /// Данных нет
     case empty
-    /// статус - при загрузке данных произошла ошибка
+    /// При загрузке данных произошла ошибка
     case error(Error)
+    /// Цепочка загрузки данных успешно завершена. 
+    case complete
     
     public static func == (lhs: FetchState<ObjectType>, rhs: FetchState<ObjectType>) -> Bool {
         switch (lhs, rhs) {

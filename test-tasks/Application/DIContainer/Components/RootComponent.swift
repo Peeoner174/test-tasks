@@ -20,7 +20,7 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
         registerProviderFactories()
         super.init()
     }
-    static let instance: RootComponentImpl = .init()
+    fileprivate static let instance: RootComponentImpl = .init()
     
     var networkClient: NetworkClient {
         shared { NetworkClient(jsonDecoder: JSONDecoder()) }
@@ -69,4 +69,12 @@ struct Injected<Value> {
         self.keyPath = keyPath
         self.value = RootComponentImpl.instance[keyPath: keyPath]
     }
+}
+
+func resolve<Value>(_ keyPath: KeyPath<RootComponent, Value>) -> Value {
+    return RootComponentImpl.instance[keyPath: keyPath]
+}
+
+func subcomponent<Value: Scope>(_ keyPath: KeyPath<RootComponent, Value>) -> Value {
+    return RootComponentImpl.instance[keyPath: keyPath]
 }

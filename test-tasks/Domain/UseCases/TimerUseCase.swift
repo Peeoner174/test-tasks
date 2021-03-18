@@ -31,7 +31,7 @@ enum TimerCommand: Command {
 
 extension UseCase {
     
-    static func stopwatch() -> UseCase<TimerCommand> {
+    static func timer() -> UseCase<TimerCommand> {
         .store(.stopped) { store in
             var timer: Timer?
             
@@ -57,7 +57,7 @@ extension UseCase {
         }
     }
     
-    static func stopwatchWithStart(on number: Int) -> UseCase<TimerCommand> {
+    static func timerWithStart(on number: Int) -> UseCase<TimerCommand> {
         .store(.pause(number)) { store in
             var timer: Timer?
         
@@ -83,3 +83,4 @@ extension UseCase {
         }
     }
 }
+

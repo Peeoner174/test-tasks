@@ -34,12 +34,25 @@ class PexesoGameViewController: ViewController {
         
         viewModel.getCards()
         bind(to: viewModel)
+        cardsHolderView.configure(with: viewModel.cards, delegate: self)
     }
     
     // MARK: - Private methods
 
     private func bind(to viewModel: PexesoViewModelOutput) {
-        self.cardsHolderView.configure(with: viewModel.cards, delegate: self)
+        viewModel.fetchCardsUseCase.state.removeDuplicates().sink(on: .main) { [weak self] state in
+            guard let self = self else { return }
+            switch state {
+            case .loading:
+                print("Loading")
+            case .object(let cards):
+                self.viewModel.cards.send(cards)
+            case .complete:
+                print("complete")
+            default:
+                break
+            }
+        }
     }
 }
 
@@ -48,13 +61,6 @@ class PexesoGameViewController: ViewController {
 extension PexesoGameViewController: CardsHolderViewDelegate {
     func restartButtonTapped() {
         viewModel.getCards()
-        
-        
-        
-        
-        
-        
-            
     }
 }
 
