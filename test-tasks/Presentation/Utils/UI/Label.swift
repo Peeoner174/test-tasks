@@ -30,12 +30,26 @@ class Label: UILabel {
         }
     }
     
-    public func setFormattedText(_ text: String?) {
+    func setFormattedText(_ text: String?) {
         self.text = text == nil && format.isEmpty ? text : String(format: format, text!)
     }
     
-    public func setFormattedText(_ text: String?, format: String) {
+    func setFormattedText(_ text: String?, format: String) {
         self.format = format
         self.text = text == nil && format.isEmpty ? text : String(format: format, text!)
+    }
+    
+    func getFormattedText() -> String? {
+        guard let text = self.text else {
+            return nil
+        }
+        return String(format: self.format, text)
+    }
+    
+    func getFormattedText(format: String) -> String? {
+        guard let text = self.text else {
+            return nil
+        }
+        return String(format: format, text)
     }
 }

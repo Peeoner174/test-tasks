@@ -32,6 +32,7 @@ class PexesoGameViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cardsHolderView.configure(delegate: self)
         bind(to: viewModel)
         viewModel.getCards()
     }

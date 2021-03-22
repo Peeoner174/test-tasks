@@ -8,25 +8,6 @@
 import Combine
 import SFSafeSymbols
 
-import Combine
-import SFSafeSymbols
-
-protocol Repository {
-    associatedtype Entity
-}
-
-protocol NetworkRepository: Repository {
-    associatedtype NetworkClient
-    
-    var networkClient: NetworkClient { get }
-}
-
-protocol StorageRepository: Repository {
-    associatedtype DatabaseClient
-    
-    var databaseClient: DatabaseClient { get }
-}
-
 final class CardsRepositoryImpl: CardsRepository {
     typealias Entity = Card
     

@@ -14,7 +14,6 @@ protocol PexesoViewModelInput {
 }
 
 protocol PexesoViewModelOutput {
-    var cards: CurrentValueSubject<[Card], Error> { get }
     var level: CurrentValueSubject<Int, Never> { get }
     var levelRange: ClosedRange<Int> { get }
     var fetchCardsUseCase: UseCase<FetchCardsCommand> { get }
@@ -28,7 +27,6 @@ class PexesoViewModelOfflineImpl: PexesoViewModel {
     // MARK: - Business logic properties
     
     private(set) var level: CurrentValueSubject<Int, Never>
-    private(set) var cards: CurrentValueSubject<[Card], Error> = .init([])
     private(set) var fetchCardsUseCase: UseCase<FetchCardsCommand> = .fetchCardsDefault()
     
     var levelRange: ClosedRange<Int>
