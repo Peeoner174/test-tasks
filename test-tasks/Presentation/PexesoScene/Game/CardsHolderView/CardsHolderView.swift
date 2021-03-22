@@ -15,6 +15,8 @@ protocol CardsHolderViewDelegate: class {
 }
 
 class CardsHolderView: XibView {
+    typealias DataModel = Array<Card>
+    
     private var bindings = Set<AnyCancellable>()
     
     weak var delegate: CardsHolderViewDelegate?
@@ -34,19 +36,14 @@ class CardsHolderView: XibView {
     
     // MARK: - Properties
     
+    private(set) var dataModel = DataModel()
+    
     private var movesCounter: Int = 0 {
         didSet {
             self.movesLabel.setFormattedText(String(self.movesCounter))
         }
     }
-    
-    private(set) var dataModel: CurrentValueSubject<[Card], Error> = .init([]) {
-        didSet {
-            self.initCards()
-            self.bindDataModel()
-        }
-    }
-    
+
     private(set) var uiConfig = CardsHolderView.UI() {
         didSet {
             onUIConfigUpdated()
@@ -61,19 +58,19 @@ class CardsHolderView: XibView {
                 let secondIndex = second.dataModel.refKey
                 let indexes = [firstIndex, secondIndex]
                 
-                if self.dataModel.value[firstIndex].image == self.dataModel.value[secondIndex].image {
+                if self.dataModel[firstIndex].image == self.dataModel[secondIndex].image {
                     indexes.forEach {
-                        self.dataModel.value[$0].isClickable = false
-                        self.dataModel.value[$0].isFlipped = true
+                        self.dataModel[$0].isClickable = false
+                        self.dataModel[$0].isFlipped = true
                     }
                 } else {
                     indexes.forEach {
-                        self.dataModel.value[$0].isClickable = true
-                        self.dataModel.value[$0].isFlipped = false
+                        self.dataModel[$0].isClickable = true
+                        self.dataModel[$0].isFlipped = false
                     }
                 }
-                first.updateAnimated(model: self.dataModel.value[firstIndex])
-                second.updateAnimated(model: self.dataModel.value[secondIndex])
+                first.updateAnimated(model: self.dataModel[firstIndex])
+                second.updateAnimated(model: self.dataModel[secondIndex])
             }
         }
     }
@@ -85,16 +82,11 @@ class CardsHolderView: XibView {
         movesCounter = 0
     }
     
-    // MARK: - Inits and configs methods
+    // MARK: - Public
     
-    func configure(
-        with cards: CurrentValueSubject<[Card], Error>,
-        uiConfig: CardsHolderView.UI? = nil,
-        delegate: CardsHolderViewDelegate? = nil
-    ) {
-        self.dataModel = cards
-        self.uiConfig = uiConfig ?? CardsHolderView.UI()
-        self.delegate = delegate
+    func dataModelUpdate(_ dataModel: DataModel) {
+        self.dataModel = dataModel
+        configure(with: dataModel)
     }
     
     // MARK: - Actions
@@ -103,29 +95,38 @@ class CardsHolderView: XibView {
         delegate?.restartButtonTapped()
         self.movesCounter = 0
         cardViewPairForCheck = Pair<CardView>()
-        self.initCards()
+        self.dataModelInit()
     }
     
     // MARK: - Priate methods
     
-    private func bindDataModel() {
-        dataModel.assertNoFailure().sink { [weak self] cards in
-            guard let self = self else { return }
-            
-            let countedSet = NSCountedSet(array: cards.filter { $0.isFlipped }.compactMap { card in
-                card.image
-            })
-            let foundedPair = countedSet.allObjects.reduce(into: 0) { result, element in
-                if countedSet.count(for: element) > 1 {
-                    result += 1
-                }
-            }
-            self.foundedPairLabel.setFormattedText(String(foundedPair))
-            self.leftPairLabel.setFormattedText( String((cards.count - foundedPair * 2) / 2) )
-        }.store(in: &bindings)
+    private func configure(
+        with dataModel: DataModel,
+        uiConfig: CardsHolderView.UI? = nil,
+        delegate: CardsHolderViewDelegate? = nil
+    ) {
+        self.dataModel = dataModel
+        self.uiConfig = uiConfig ?? CardsHolderView.UI()
+        self.delegate = delegate
+        
+        self.dataModelInit()
+        self.refreshScoreLabels()
     }
     
-    private func initCards() {
+    private func refreshScoreLabels() {
+        let countedSet = NSCountedSet(array: dataModel.filter { $0.isFlipped }.compactMap { card in
+            card.image
+        })
+        let foundedPair = countedSet.allObjects.reduce(into: 0) { result, element in
+            if countedSet.count(for: element) > 1 {
+                result += 1
+            }
+        }
+        self.foundedPairLabel.setFormattedText(String(foundedPair))
+        self.leftPairLabel.setFormattedText( String((dataModel.count - foundedPair * 2) / 2) )
+    }
+    
+    private func dataModelInit() {
         var cardsRows: [[CardView]] = []
         defer {
             stackView.removeAllArrangedSubviews()
@@ -133,7 +134,7 @@ class CardsHolderView: XibView {
                 stackView.addArrangedSubview(createRow(with: $0))
             }
         }
-        let cards = dataModel.value
+        let cards = dataModel
         guard !cards.isEmpty else { return }
         
         let squareRootOfCardsCount = sqrt(Double(cards.count))
@@ -196,9 +197,10 @@ class CardsHolderView: XibView {
 
 extension CardsHolderView: CardViewDelegate {
     func cardViewDidTapped(_ cardView: CardView, withModel model: Card) {
-        dataModel.value[model.refKey] = model
+        dataModel[model.refKey] = model
         cardViewPairForCheck.append(cardView)
         self.movesCounter += 1
+        self.refreshScoreLabels()
     }
 }
 

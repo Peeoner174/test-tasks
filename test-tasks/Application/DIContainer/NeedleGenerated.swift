@@ -4,9 +4,6 @@ import MoyaNetworkClient_Combine
 import NeedleFoundation
 import UIKit
 
-// swiftlint:disable unused_declaration
-private let needleDependenciesHash : String? = nil
-
 // MARK: - Registration
 
 public func registerProviderFactories() {
@@ -21,18 +18,13 @@ public func registerProviderFactories() {
 
 // MARK: - Providers
 
-private class PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider: PexesoModuleDependency {
+/// ^->RootComponentImpl->PexesoComponent
+private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependency {
     var pexesoViewModel: PexesoViewModel {
         return rootComponentImpl.pexesoViewModel
     }
     private let rootComponentImpl: RootComponentImpl
-    init(rootComponentImpl: RootComponentImpl) {
-        self.rootComponentImpl = rootComponentImpl
-    }
-}
-/// ^->RootComponentImpl->PexesoComponent
-private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider {
     init(component: NeedleFoundation.Scope) {
-        super.init(rootComponentImpl: component.parent as! RootComponentImpl)
+        rootComponentImpl = component.parent as! RootComponentImpl
     }
 }

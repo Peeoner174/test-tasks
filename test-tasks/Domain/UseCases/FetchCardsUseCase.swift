@@ -17,7 +17,7 @@ extension UseCase {
     static func fetchCardsDefault() -> UseCase<FetchCardsCommand> {
         .store(.unknown) { store in
             var bindings = Set<AnyCancellable>()
-            let cardsRepository = CardsRepositoryImpl(networkClient: resolve(\.networkClient))
+            let cardsRepository = CardsRepositoryImpl()
             
             let onStartFetchCommandBlock: ((Subscribers.Demand) -> Void)? = { _ in
                 store.update { $0 = .loading }

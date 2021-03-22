@@ -12,6 +12,7 @@ import UIKit
 protocol RootComponent: Scope {
     var pexesoComponent: PexesoComponent { get }
     var networkClient: NetworkClient { get }
+    var coreDataClient: CoreDataStorage { get }
 }
 
 class RootComponentImpl: BootstrapComponent, RootComponent {
@@ -24,6 +25,10 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
     
     var networkClient: NetworkClient {
         shared { NetworkClient(jsonDecoder: JSONDecoder()) }
+    }
+    
+    var coreDataClient: CoreDataStorage {
+        shared { CoreDataStorage() }
     }
 
     // MARK: Pexeso

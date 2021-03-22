@@ -32,9 +32,8 @@ class PexesoGameViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.getCards()
         bind(to: viewModel)
-        cardsHolderView.configure(with: viewModel.cards, delegate: self)
+        viewModel.getCards()
     }
     
     // MARK: - Private methods
@@ -46,7 +45,8 @@ class PexesoGameViewController: ViewController {
             case .loading:
                 print("Loading")
             case .object(let cards):
-                self.viewModel.cards.send(cards)
+                print("\(cards.count) objects loaded")
+                self.cardsHolderView.dataModelUpdate(cards)
             case .complete:
                 print("complete")
             default:
