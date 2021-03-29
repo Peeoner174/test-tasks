@@ -21,7 +21,7 @@ protocol PexesoViewModelOutput {
 
 protocol PexesoViewModel: class, PexesoViewModelInput, PexesoViewModelOutput {}
 
-class PexesoViewModelOfflineImpl: PexesoViewModel {
+final class PexesoViewModelOfflineImpl: PexesoViewModel {
     private var bindings = Set<AnyCancellable>()
     
     // MARK: - Business logic properties

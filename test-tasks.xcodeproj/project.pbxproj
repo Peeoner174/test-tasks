@@ -13,6 +13,10 @@
 		5C2D7D0E25F8FC5400261174 /* PexesoStartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */; };
 		5C645CE826083D0800E6815C /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C645CE726083D0800E6815C /* CoreDataStorage.swift */; };
 		5C645CEA26087A6700E6815C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C645CE926087A6700E6815C /* Repository.swift */; };
+		5C871657260A34E300423D52 /* ExchangeRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C871656260A34E300423D52 /* ExchangeRatesView.swift */; };
+		5C871659260A37CE00423D52 /* ExchangeRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C871658260A37CE00423D52 /* ExchangeRatesViewModel.swift */; };
+		5C8EB4E4260DF0F400F15888 /* CyrrencyRatesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EB4E3260DF0F400F15888 /* CyrrencyRatesDTO.swift */; };
+		5C8EB4E6260DFCB500F15888 /* ExchangeRatesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EB4E5260DFCB500F15888 /* ExchangeRatesApi.swift */; };
 		5CE7B8BF25FFB013009D2596 /* FetchCardsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7B8BE25FFB013009D2596 /* FetchCardsUseCase.swift */; };
 		6E33C4C125B865990028E07D /* PexesoStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33C4C025B865990028E07D /* PexesoStartViewController.swift */; };
 		6E34089825B83EB700259B0F /* Pexeso.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E34089725B83EB700259B0F /* Pexeso.storyboard */; };
@@ -90,6 +94,10 @@
 		5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartCoordinator.swift; sourceTree = "<group>"; };
 		5C645CE726083D0800E6815C /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		5C645CE926087A6700E6815C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		5C871656260A34E300423D52 /* ExchangeRatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesView.swift; sourceTree = "<group>"; };
+		5C871658260A37CE00423D52 /* ExchangeRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewModel.swift; sourceTree = "<group>"; };
+		5C8EB4E3260DF0F400F15888 /* CyrrencyRatesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyrrencyRatesDTO.swift; sourceTree = "<group>"; };
+		5C8EB4E5260DFCB500F15888 /* ExchangeRatesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesApi.swift; sourceTree = "<group>"; };
 		5CE7B8BE25FFB013009D2596 /* FetchCardsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCardsUseCase.swift; sourceTree = "<group>"; };
 		6E33C4C025B865990028E07D /* PexesoStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartViewController.swift; sourceTree = "<group>"; };
 		6E34089725B83EB700259B0F /* Pexeso.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pexeso.storyboard; sourceTree = "<group>"; };
@@ -197,8 +205,18 @@
 		5C645CE626083CE300E6815C /* DataMapping */ = {
 			isa = PBXGroup;
 			children = (
+				5C8EB4E3260DF0F400F15888 /* CyrrencyRatesDTO.swift */,
 			);
 			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		5C871654260A349600423D52 /* ExchangeRatesTraker */ = {
+			isa = PBXGroup;
+			children = (
+				5C871656260A34E300423D52 /* ExchangeRatesView.swift */,
+				5C871658260A37CE00423D52 /* ExchangeRatesViewModel.swift */,
+			);
+			path = ExchangeRatesTraker;
 			sourceTree = "<group>";
 		};
 		5CE7B8BC25FFAFF0009D2596 /* UseCases */ = {
@@ -235,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				6E3408A525B840CC00259B0F /* MemoryGameApi.swift */,
+				5C8EB4E5260DFCB500F15888 /* ExchangeRatesApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -294,6 +313,7 @@
 		6EAFDFEE25B72838007393DF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5C871654260A349600423D52 /* ExchangeRatesTraker */,
 				6EAFDFEF25B72840007393DF /* PexesoScene */,
 				6ECC63F225FAAE72001C9903 /* Utils */,
 			);
@@ -647,6 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8EB4E4260DF0F400F15888 /* CyrrencyRatesDTO.swift in Sources */,
 				6EBC385425B888130022031C /* Clamping.swift in Sources */,
 				6E996B0F25D0385900126375 /* PushNotificationsAppDelegate.swift in Sources */,
 				6E3408A625B840CC00259B0F /* MemoryGameApi.swift in Sources */,
@@ -664,6 +685,7 @@
 				6EAE5C9825B70FA600FEEF12 /* PexesoGameViewController.swift in Sources */,
 				6EBC38B425B8A0530022031C /* Label.swift in Sources */,
 				6EBC382125B87AF20022031C /* ViewController.swift in Sources */,
+				5C871659260A37CE00423D52 /* ExchangeRatesViewModel.swift in Sources */,
 				6EBC38BC25B8B9980022031C /* Array + Extension.swift in Sources */,
 				6EBC381525B87A010022031C /* Router.swift in Sources */,
 				6EAFDFD225B7152C007393DF /* ChainOfResponsibility.swift in Sources */,
@@ -688,12 +710,14 @@
 				6EDAB32826028B060053F7AA /* TimerUseCase.swift in Sources */,
 				6EBC381E25B87ABF0022031C /* NavigationController.swift in Sources */,
 				6EDAB32626028A780053F7AA /* FetchState.swift in Sources */,
+				5C8EB4E6260DFCB500F15888 /* ExchangeRatesApi.swift in Sources */,
 				5C645CE826083D0800E6815C /* CoreDataStorage.swift in Sources */,
 				6ECC63E025FAA4FB001C9903 /* AppConfiguration.swift in Sources */,
 				6EAC031025B9B51700B4921E /* Pair.swift in Sources */,
 				6EBC380E25B879CF0022031C /* BaseCoordinator.swift in Sources */,
 				6EBC384125B87EE50022031C /* Reusable.swift in Sources */,
 				5C2D7D0C25F8FC3A00261174 /* PexesoGameCoordinator.swift in Sources */,
+				5C871657260A34E300423D52 /* ExchangeRatesView.swift in Sources */,
 				6EBC383725B87D420022031C /* PexesoComponent.swift in Sources */,
 				6EB2B77525D420D100ECBB7E /* Service.swift in Sources */,
 				6EBC38B825B8A15E0022031C /* Fonts.swift in Sources */,
