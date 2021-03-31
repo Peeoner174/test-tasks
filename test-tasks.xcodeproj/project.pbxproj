@@ -65,6 +65,9 @@
 		6EBC38B825B8A15E0022031C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC38B725B8A15E0022031C /* Fonts.swift */; };
 		6EBC38BC25B8B9980022031C /* Array + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC38BB25B8B9980022031C /* Array + Extension.swift */; };
 		6EBC38C225B8CDAD0022031C /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC38C125B8CDAD0022031C /* UIStackView + Extension.swift */; };
+		6EC6899426122289001C9CE6 /* Bagel in Frameworks */ = {isa = PBXBuildFile; productRef = 6EC6899326122289001C9CE6 /* Bagel */; };
+		6EC68996261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC68995261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift */; };
+		6EC68998261222F2001C9CE6 /* ExchangeRatesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC68997261222F2001C9CE6 /* ExchangeRatesRepository.swift */; };
 		6ECC63D525FA746E001C9903 /* Publisher + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC63D425FA746E001C9903 /* Publisher + Extension.swift */; };
 		6ECC63DC25FA988F001C9903 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC63DB25FA988F001C9903 /* NeedleGenerated.swift */; };
 		6ECC63DE25FAA4C0001C9903 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC63DD25FAA4C0001C9903 /* AppAppearance.swift */; };
@@ -145,6 +148,8 @@
 		6EBC38B725B8A15E0022031C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6EBC38BB25B8B9980022031C /* Array + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extension.swift"; sourceTree = "<group>"; };
 		6EBC38C125B8CDAD0022031C /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		6EC68995261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesRepositoryImpl.swift; sourceTree = "<group>"; };
+		6EC68997261222F2001C9CE6 /* ExchangeRatesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesRepository.swift; sourceTree = "<group>"; };
 		6ECC63D425FA746E001C9903 /* Publisher + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher + Extension.swift"; sourceTree = "<group>"; };
 		6ECC63DB25FA988F001C9903 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		6ECC63DD25FAA4C0001C9903 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
@@ -158,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC6899426122289001C9CE6 /* Bagel in Frameworks */,
 				6EAD788625F6542C00AFE6FD /* SFSafeSymbols in Frameworks */,
 				6EAD787825F651E900AFE6FD /* NeedleFoundation in Frameworks */,
 				6EAD788C25F6566200AFE6FD /* SwiftyBeaver in Frameworks */,
@@ -181,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				5C1C52412601294B00EFC94A /* CardsRepository.swift */,
+				6EC68997261222F2001C9CE6 /* ExchangeRatesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -190,6 +197,7 @@
 			children = (
 				5C645CE926087A6700E6815C /* Repository.swift */,
 				5C1C5244260129AE00EFC94A /* CardsRepositoryImpl.swift */,
+				6EC68995261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -582,6 +590,7 @@
 				6EAD788B25F6566200AFE6FD /* SwiftyBeaver */,
 				6EAD789725F681DA00AFE6FD /* MoyaNetworkClient-Combine */,
 				6EDAB2DB26024B390053F7AA /* UseCaseKit */,
+				6EC6899326122289001C9CE6 /* Bagel */,
 			);
 			productName = "simple-memory-game";
 			productReference = 6EAD789A25F68B9800AFE6FD /* test-tasks.app */;
@@ -616,6 +625,7 @@
 				6EAD788A25F6566200AFE6FD /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				6EAD789625F681DA00AFE6FD /* XCRemoteSwiftPackageReference "MoyaNetworkClient-Combine" */,
 				6EDAB2DA26024B390053F7AA /* XCRemoteSwiftPackageReference "UseCaseKit" */,
+				6EC6899226122289001C9CE6 /* XCRemoteSwiftPackageReference "Bagel" */,
 			);
 			productRefGroup = 6EAE5C8725B70FA600FEEF12;
 			projectDirPath = "";
@@ -685,6 +695,7 @@
 				6EAE5C9825B70FA600FEEF12 /* PexesoGameViewController.swift in Sources */,
 				6EBC38B425B8A0530022031C /* Label.swift in Sources */,
 				6EBC382125B87AF20022031C /* ViewController.swift in Sources */,
+				6EC68996261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift in Sources */,
 				5C871659260A37CE00423D52 /* ExchangeRatesViewModel.swift in Sources */,
 				6EBC38BC25B8B9980022031C /* Array + Extension.swift in Sources */,
 				6EBC381525B87A010022031C /* Router.swift in Sources */,
@@ -717,6 +728,7 @@
 				6EBC380E25B879CF0022031C /* BaseCoordinator.swift in Sources */,
 				6EBC384125B87EE50022031C /* Reusable.swift in Sources */,
 				5C2D7D0C25F8FC3A00261174 /* PexesoGameCoordinator.swift in Sources */,
+				6EC68998261222F2001C9CE6 /* ExchangeRatesRepository.swift in Sources */,
 				5C871657260A34E300423D52 /* ExchangeRatesView.swift in Sources */,
 				6EBC383725B87D420022031C /* PexesoComponent.swift in Sources */,
 				6EB2B77525D420D100ECBB7E /* Service.swift in Sources */,
@@ -953,6 +965,14 @@
 				kind = branch;
 			};
 		};
+		6EC6899226122289001C9CE6 /* XCRemoteSwiftPackageReference "Bagel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swhitty/Bagel";
+			requirement = {
+				branch = spm;
+				kind = branch;
+			};
+		};
 		6EDAB2DA26024B390053F7AA /* XCRemoteSwiftPackageReference "UseCaseKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/crexista/UseCaseKit.git";
@@ -983,6 +1003,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6EAD789625F681DA00AFE6FD /* XCRemoteSwiftPackageReference "MoyaNetworkClient-Combine" */;
 			productName = "MoyaNetworkClient-Combine";
+		};
+		6EC6899326122289001C9CE6 /* Bagel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EC6899226122289001C9CE6 /* XCRemoteSwiftPackageReference "Bagel" */;
+			productName = Bagel;
 		};
 		6EDAB2DB26024B390053F7AA /* UseCaseKit */ = {
 			isa = XCSwiftPackageProductDependency;

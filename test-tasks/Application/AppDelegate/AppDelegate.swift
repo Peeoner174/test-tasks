@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Bagel
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, NetworkStatusSupplier {
@@ -32,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkStatusSupplier {
         self.appCoordinator.start().sink().store(in: &bindings)
         
         ReachabilityManager.shared.addListener(self)
+        
+        #if DEBUG
+        Bagel.start()
+        #endif
         
         return true
     }
