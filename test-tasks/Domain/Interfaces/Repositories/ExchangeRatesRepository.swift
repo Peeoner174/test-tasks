@@ -2,9 +2,12 @@
 //  ExchangeRatesRepository.swift
 //  test-tasks
 //
-//  Created by MSI on 29.03.2021.
+//  Created by Pavel Kochenda on 31.03.2021.
 //
 
-protocol ExchangeRatesRepository: Repository {
-    
+import Combine
+
+protocol ExchangeRatesRepository: NetworkRepository {
+    func fetchLastUpdates(base: String) -> AnyPublisher<Entity, Error>
 }
+

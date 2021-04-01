@@ -9,12 +9,20 @@ import MoyaNetworkClient_Combine
 import Foundation
 
 enum ExchangeRatesApi {
-    case latest(currencyBase: String)
+    case latest
+    
+    struct LatestResponseDTO: Decodable {
+        let disclaimer: String
+        let license: String
+        let base: String
+        let timestamp: Int
+        let rates: [String: Double]
+    }
 }
 
 extension ExchangeRatesApi: NetworkTarget {
     var baseURL: URL {
-        AppConfiguration.currencyExchangeBaseURL
+        AppConfiguration.currencyExchangeMockURL
     }
     
     var route: Route {
@@ -35,3 +43,7 @@ extension ExchangeRatesApi: NetworkTarget {
         nil
     }
 }
+
+
+
+

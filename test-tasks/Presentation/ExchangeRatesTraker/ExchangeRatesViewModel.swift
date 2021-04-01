@@ -8,11 +8,11 @@
 import Combine
 
 protocol ExchangeRatesViewModelInput {
-    
+
 }
 
 protocol ExchangeRatesViewModelOutput {
-    
+//    var exchangeRatesUseCase
 }
 
 protocol ExchangeRatesViewModel: class, ExchangeRatesViewModelInput, ExchangeRatesViewModelOutput {}
