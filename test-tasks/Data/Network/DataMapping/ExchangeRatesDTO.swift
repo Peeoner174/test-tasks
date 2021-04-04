@@ -8,7 +8,14 @@
 import Foundation
 
 extension ExchangeRatesApi.LatestResponseDTO {
+    typealias ConversionRates = Сurrency.ConversionRates
+    
     func toDomain() -> ConversionRates {
-        ConversionRates(timestamp: TimeInterval(self.timestamp), base: self.base, rates: self.rates)
+        
+        let rates = self.rates.keys.sorted().map {
+            ConversionRates.Rate(id: $0, value: self.rates[$0] ?? 0.0)
+        }
+        
+        return ConversionRates(timestamp: TimeInterval(self.timestamp), base: self.base, rates: rates)
     }
 }

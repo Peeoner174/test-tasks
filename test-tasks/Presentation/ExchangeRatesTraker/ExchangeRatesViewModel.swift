@@ -19,10 +19,6 @@ protocol ExchangeRatesViewModelOutput {
 protocol ExchangeRatesViewModel: class, ExchangeRatesViewModelInput, ExchangeRatesViewModelOutput {}
 
 final class ExchangeRatesViewModelImpl: ExchangeRatesViewModel {
-    var exchangeRatesUseCase: UseCase<FetchExchangeRatesCommand> = .fetchLastDefault()
-    
-    func t() {
-        exchangeRatesUseCase.dispatcher.dispatch(.fetchLast(base: ""))
-    }
+    var exchangeRatesUseCase: UseCase<FetchExchangeRatesCommand> = .fetchLastMock()
     
 }

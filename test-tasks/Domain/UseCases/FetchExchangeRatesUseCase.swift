@@ -9,7 +9,7 @@ import UseCaseKit
 import Combine
 
 enum FetchExchangeRatesCommand: Command {
-    typealias State = FetchState<ConversionRates>
+    typealias State = FetchState<Сurrency.ConversionRates>
     case fetchLast(base: String)
 }
 
@@ -34,7 +34,7 @@ extension UseCase {
                 }
             }
             
-            let standartOnReveiveValueBlock: ((ConversionRates) -> Void)? = { object in
+            let standartOnReveiveValueBlock: ((Сurrency.ConversionRates) -> Void)? = { object in
                 logger.debug("use case receive value")
                 store.update { $0 = .object(object) }
             }
@@ -73,7 +73,7 @@ extension UseCase {
                 }
             }
             
-            let standartOnReveiveValueBlock: ((ConversionRates) -> Void)? = { object in
+            let standartOnReveiveValueBlock: ((Сurrency.ConversionRates) -> Void)? = { object in
                 logger.debug("MOCK use case receive value")
                 store.update { $0 = .object(object) }
             }

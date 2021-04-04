@@ -10,7 +10,7 @@ import MoyaNetworkClient_Combine
 
 class ExchangeRatesRepositoryImpl: ExchangeRatesRepository {
     typealias NetworkClient = MoyaNetworkClient_Combine.NetworkClient
-    typealias Entity = ConversionRates
+    typealias Entity = Сurrency.ConversionRates
     
     var networkClient: NetworkClient
     

@@ -7,13 +7,19 @@
 
 import Foundation
 
-struct ConversionRates: Equatable {
-    let timestamp: TimeInterval
-    let base: String
-    let rates: [String: Double]
-}
-
 struct Сurrency: Equatable {
     let name: String
     let conversionRates: ConversionRates
+    
+    struct ConversionRates: Equatable {
+        let timestamp: TimeInterval
+        let base: String
+        let rates: [Rate]
+        
+        struct Rate: Identifiable, Equatable {
+            var id: String
+            var value: Double
+        }
+    }
 }
+
