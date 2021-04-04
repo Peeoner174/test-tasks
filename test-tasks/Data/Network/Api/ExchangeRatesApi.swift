@@ -22,7 +22,7 @@ enum ExchangeRatesApi {
 
 extension ExchangeRatesApi: NetworkTarget {
     var baseURL: URL {
-        AppConfiguration.currencyExchangeMockURL
+        AppConfiguration.currencyExchangeBaseURL
     }
     
     var route: Route {
@@ -44,6 +44,11 @@ extension ExchangeRatesApi: NetworkTarget {
     }
 }
 
+extension ExchangeRatesApi: ServerStubable {
+    var mockBaseUrl: URL {
+        AppConfiguration.currencyExchangeMockURL
+    }
+}
 
 
 

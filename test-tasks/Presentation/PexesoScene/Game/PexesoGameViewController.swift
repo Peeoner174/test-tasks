@@ -44,12 +44,11 @@ class PexesoGameViewController: ViewController {
             guard let self = self else { return }
             switch state {
             case .loading:
-                print("Loading")
+                break
             case .object(let cards):
-                print("\(cards.count) objects loaded")
                 self.cardsHolderView.dataModelUpdate(cards)
             case .complete:
-                print("complete")
+                break
             default:
                 break
             }

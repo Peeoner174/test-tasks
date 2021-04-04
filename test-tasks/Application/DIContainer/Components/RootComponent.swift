@@ -12,6 +12,8 @@ import UIKit
 protocol RootComponent: Scope {
     var pexesoComponent: PexesoComponent { get }
     var networkClient: NetworkClient { get }
+    var networkClientRemoteMock: NetworkClient { get }
+    var networkClientLocalMock: NetworkClient { get }
     var coreDataClient: CoreDataStorage { get }
 }
 
@@ -25,6 +27,14 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
     
     var networkClient: NetworkClient {
         shared { NetworkClient(jsonDecoder: JSONDecoder()) }
+    }
+    
+    var networkClientRemoteMock: NetworkClient {
+        shared { NetworkClient(jsonDecoder: JSONDecoder(), stubBehaviour: .withMockServer) }
+    }
+    
+    var networkClientLocalMock: NetworkClient {
+        shared { NetworkClient(jsonDecoder: JSONDecoder(), stubBehaviour: .delayed(seconds: 0.3)) }
     }
     
     var coreDataClient: CoreDataStorage {
