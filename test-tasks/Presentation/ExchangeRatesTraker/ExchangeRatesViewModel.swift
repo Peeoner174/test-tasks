@@ -8,17 +8,21 @@
 import Combine
 import UseCaseKit
 
-protocol ExchangeRatesViewModelInput {
-    
-}
-
-protocol ExchangeRatesViewModelOutput {
+protocol ExchangeRatesViewModel: BaseViewModel {
     var exchangeRatesUseCase: UseCase<FetchExchangeRatesCommand> { get }
 }
 
-protocol ExchangeRatesViewModel: class, ExchangeRatesViewModelInput, ExchangeRatesViewModelOutput {}
-
-final class ExchangeRatesViewModelImpl: ExchangeRatesViewModel {
+final class ExchangeRatesViewModelImpl: BaseViewModel, ExchangeRatesViewModel {
     var exchangeRatesUseCase: UseCase<FetchExchangeRatesCommand> = .fetchLastMock()
-    
+
+    override init() {
+        super.init()
+        
+        viewWillAppear.sink(receiveValue: {
+            self.exchangeRatesUseCase.dispatcher.dispatch(.fetchLast(base: ""))
+        }).store(in: &bindings)
+    }
 }
+
+
+

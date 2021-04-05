@@ -15,13 +15,13 @@ class PexesoComponent: Component<PexesoModuleDependency> {
     
     var startViewController: PexesoStartViewController {
         .instantiate(fromStoryboard: .pexeso) { coder in
-            PexesoStartViewController(coder: coder, viewModel: self.dependency.pexesoViewModel)
+            PexesoStartViewController(coder: coder, viewModel: AnyPexesoViewModel(wrappedValue: self.dependency.pexesoViewModel))
         }
     }
     
     var gameViewController: PexesoGameViewController {
         .instantiate(fromStoryboard: .pexeso) { coder in
-            PexesoGameViewController(coder: coder, viewModel: self.dependency.pexesoViewModel)
+            PexesoGameViewController(coder: coder, viewModel: AnyPexesoViewModel(wrappedValue: self.dependency.pexesoViewModel))
         }
     }
 }

@@ -4,12 +4,12 @@ import MoyaNetworkClient_Combine
 import NeedleFoundation
 import UIKit
 
-// swiftlint:disable unused_declaration
-private let needleDependenciesHash : String? = nil
-
 // MARK: - Registration
 
 public func registerProviderFactories() {
+    __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponentImpl->ExchangeRatesComponent") { component in
+        return ExchangeRatesDependencycef0384644d727ea885dProvider(component: component)
+    }
     __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponentImpl") { component in
         return EmptyDependencyProvider(component: component)
     }
@@ -21,18 +21,23 @@ public func registerProviderFactories() {
 
 // MARK: - Providers
 
-private class PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider: PexesoModuleDependency {
+/// ^->RootComponentImpl->ExchangeRatesComponent
+private class ExchangeRatesDependencycef0384644d727ea885dProvider: ExchangeRatesDependency {
+    var exchangeRatesViewModel: ExchangeRatesViewModel {
+        return rootComponentImpl.exchangeRatesViewModel
+    }
+    private let rootComponentImpl: RootComponentImpl
+    init(component: NeedleFoundation.Scope) {
+        rootComponentImpl = component.parent as! RootComponentImpl
+    }
+}
+/// ^->RootComponentImpl->PexesoComponent
+private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependency {
     var pexesoViewModel: PexesoViewModel {
         return rootComponentImpl.pexesoViewModel
     }
     private let rootComponentImpl: RootComponentImpl
-    init(rootComponentImpl: RootComponentImpl) {
-        self.rootComponentImpl = rootComponentImpl
-    }
-}
-/// ^->RootComponentImpl->PexesoComponent
-private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider {
     init(component: NeedleFoundation.Scope) {
-        super.init(rootComponentImpl: component.parent as! RootComponentImpl)
+        rootComponentImpl = component.parent as! RootComponentImpl
     }
 }

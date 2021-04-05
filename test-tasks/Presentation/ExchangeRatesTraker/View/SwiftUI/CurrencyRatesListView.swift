@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CurrencyRatesListView: View {
-    typealias Rates = [Сurrency.ConversionRates.Rate]
-    var rates: Rates
+    var rates: [Сurrency.ConversionRates.Rate]
     
     var body: some View {
         List(rates) { rate in

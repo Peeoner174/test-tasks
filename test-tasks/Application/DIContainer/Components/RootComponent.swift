@@ -50,6 +50,16 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
     var pexesoViewModel: PexesoViewModel {
         shared { PexesoViewModelOfflineImpl(withLevel: 1, levelRange: 1...5) }
     }
+    
+    // MARK: Exchange Rates
+    
+    var exchangeRatesComponent: ExchangeRatesComponent {
+        ExchangeRatesComponent(parent: self)
+    }
+    
+    var exchangeRatesViewModel: ExchangeRatesViewModel {
+        shared { ExchangeRatesViewModelImpl() }
+    }
 }
 
 @propertyWrapper

@@ -8,20 +8,7 @@
 import UIKit
 import Combine
 
-class PexesoGameViewController: ViewController {
-    private var bindings = Set<AnyCancellable>()
-    
-    let viewModel: PexesoViewModel
-    weak var coordinator: PexesoGameCoordinator!
-    
-    init?(coder: NSCoder, viewModel: PexesoViewModel) {
-        self.viewModel = viewModel
-        super.init(coder: coder)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class PexesoGameViewController: MVVMViewController<AnyPexesoViewModel, PexesoGameCoordinator> {
         
     // MARK: - UI Properties
     

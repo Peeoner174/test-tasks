@@ -19,10 +19,9 @@ protocol PexesoViewModelOutput {
     var fetchCardsUseCase: UseCase<FetchCardsCommand> { get }
 }
 
-protocol PexesoViewModel: class, PexesoViewModelInput, PexesoViewModelOutput {}
+typealias PexesoViewModel = BaseViewModel & PexesoViewModelInput & PexesoViewModelOutput
 
 final class PexesoViewModelOfflineImpl: PexesoViewModel {
-    private var bindings = Set<AnyCancellable>()
     
     // MARK: - Business logic properties
     
@@ -47,9 +46,7 @@ final class PexesoViewModelOfflineImpl: PexesoViewModel {
     }
 }
 
-class PexesoViewModelRestImpl: PexesoViewModel {
-    
-    private var bindings = Set<AnyCancellable>()
+final class PexesoViewModelRestImpl: PexesoViewModel {
     
     // MARK: - Business logic properties
     
@@ -72,5 +69,33 @@ class PexesoViewModelRestImpl: PexesoViewModel {
     
     func getCards() {
         unimplemented()
+    }
+}
+
+final class AnyPexesoViewModel: PexesoViewModel {
+    private var wrappedValue: PexesoViewModel
+    
+    init(wrappedValue: PexesoViewModel) {
+        self.wrappedValue = wrappedValue
+    }
+    
+    func getCards() {
+        wrappedValue.getCards()
+    }
+    
+    func updateLevel(_ level: Int) {
+        wrappedValue.updateLevel(level)
+    }
+    
+    var level: CurrentValueSubject<Int, Never> {
+        wrappedValue.level
+    }
+    
+    var levelRange: ClosedRange<Int> {
+        wrappedValue.levelRange
+    }
+    
+    var fetchCardsUseCase: UseCase<FetchCardsCommand> {
+        wrappedValue.fetchCardsUseCase
     }
 }
