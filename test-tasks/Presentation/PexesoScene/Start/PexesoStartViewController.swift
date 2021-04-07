@@ -22,7 +22,15 @@ class PexesoStartViewController: MVVMViewController<AnyPexesoViewModel, PexesoSt
         
         selectLevelSlider.minimumValue = Float(self.viewModel.levelRange.first!)
         selectLevelSlider.maximumValue = Float(self.viewModel.levelRange.last!)
-        bind(to: viewModel)
+    }
+    
+    override func bind(to viewModel: AnyPexesoViewModel) {
+        super.bind(to: viewModel)
+        
+        viewModel.level.sink { [weak self] in
+            guard let self = self else { return }
+            self.selectedLevelLabel.setFormattedText(String($0))
+        }.store(in: &bindings)
     }
     
     // MARK: Actions
@@ -37,15 +45,6 @@ class PexesoStartViewController: MVVMViewController<AnyPexesoViewModel, PexesoSt
     
     @IBAction func startAction(_ sender: Button) {
         handle(.game)
-    }
-    
-    // MARK: - Private methods
-    
-    private func bind(to viewModel: PexesoViewModelOutput) {
-        viewModel.level.sink { [weak self] in
-            guard let self = self else { return }
-            self.selectedLevelLabel.setFormattedText(String($0))
-        }.store(in: &bindings)
     }
 }
 

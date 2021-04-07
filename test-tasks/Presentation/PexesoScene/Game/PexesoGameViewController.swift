@@ -20,13 +20,11 @@ class PexesoGameViewController: MVVMViewController<AnyPexesoViewModel, PexesoGam
         super.viewDidLoad()
         
         cardsHolderView.configure(delegate: self)
-        bind(to: viewModel)
-        viewModel.getCards()
     }
     
-    // MARK: - Private methods
-
-    private func bind(to viewModel: PexesoViewModelOutput) {
+    override func bind(to viewModel: AnyPexesoViewModel) {
+        super.bind(to: viewModel)
+        
         viewModel.fetchCardsUseCase.state.removeDuplicates().sink(on: .main) { [weak self] state in
             guard let self = self else { return }
             switch state {
@@ -47,7 +45,7 @@ class PexesoGameViewController: MVVMViewController<AnyPexesoViewModel, PexesoGam
 
 extension PexesoGameViewController: CardsHolderViewDelegate {
     func restartButtonTapped() {
-        viewModel.getCards()
+        viewModel.fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: viewModel.level.value))
     }
 }
 

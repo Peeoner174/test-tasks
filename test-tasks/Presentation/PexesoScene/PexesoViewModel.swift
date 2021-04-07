@@ -9,7 +9,6 @@ import Combine
 import UseCaseKit
 
 protocol PexesoViewModelInput {
-    func getCards()
     func updateLevel(_ level: Int)
 }
 
@@ -33,16 +32,13 @@ final class PexesoViewModelOfflineImpl: PexesoViewModel {
     init(withLevel level: Int, levelRange: ClosedRange<Int>) {
         self.levelRange = levelRange
         self.level = .init(levelRange.clamp(level))
+        super.init()
     }
     
     // MARK: - PexesoViewModelInput
     
     func updateLevel(_ level: Int) {
         self.level.value = levelRange.clamp(level)
-    }
-    
-    func getCards() {
-        fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: 2 << level.value))
     }
 }
 
@@ -66,10 +62,6 @@ final class PexesoViewModelRestImpl: PexesoViewModel {
     func updateLevel(_ level: Int) {
         self.level.value = levelRange.clamp(level)
     }
-    
-    func getCards() {
-        unimplemented()
-    }
 }
 
 final class AnyPexesoViewModel: PexesoViewModel {
@@ -77,10 +69,12 @@ final class AnyPexesoViewModel: PexesoViewModel {
     
     init(wrappedValue: PexesoViewModel) {
         self.wrappedValue = wrappedValue
-    }
-    
-    func getCards() {
-        wrappedValue.getCards()
+        super.init()
+        
+        viewDidLoad.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: self.level.value))
+        }.store(in: &bindings)
     }
     
     func updateLevel(_ level: Int) {

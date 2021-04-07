@@ -11,6 +11,7 @@
 		5C1C5245260129AE00EFC94A /* CardsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C5244260129AE00EFC94A /* CardsRepositoryImpl.swift */; };
 		5C2D7D0C25F8FC3A00261174 /* PexesoGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0B25F8FC3A00261174 /* PexesoGameCoordinator.swift */; };
 		5C2D7D0E25F8FC5400261174 /* PexesoStartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */; };
+		5C416C9D261DE8F800E17287 /* LinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C416C9C261DE8F800E17287 /* LinkHandler.swift */; };
 		5C436B242614A65E00F9F9BC /* Сurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C436B232614A65E00F9F9BC /* Сurrency.swift */; };
 		5C436B302614B87D00F9F9BC /* FetchExchangeRatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C436B2F2614B87D00F9F9BC /* FetchExchangeRatesUseCase.swift */; };
 		5C4CBF59261B27E10050A746 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4CBF58261B27E10050A746 /* BaseViewModel.swift */; };
@@ -103,6 +104,7 @@
 		5C1C5244260129AE00EFC94A /* CardsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRepositoryImpl.swift; sourceTree = "<group>"; };
 		5C2D7D0B25F8FC3A00261174 /* PexesoGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoGameCoordinator.swift; sourceTree = "<group>"; };
 		5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartCoordinator.swift; sourceTree = "<group>"; };
+		5C416C9C261DE8F800E17287 /* LinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkHandler.swift; sourceTree = "<group>"; };
 		5C436B232614A65E00F9F9BC /* Сurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Сurrency.swift"; sourceTree = "<group>"; };
 		5C436B2F2614B87D00F9F9BC /* FetchExchangeRatesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchExchangeRatesUseCase.swift; sourceTree = "<group>"; };
 		5C4CBF58261B27E10050A746 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -226,6 +228,13 @@
 			path = PersistentStorages;
 			sourceTree = "<group>";
 		};
+		5C416C9E261DEDA600E17287 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		5C4CBF57261B27B30050A746 /* MVVM base classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,26 +313,11 @@
 			path = SwiftUI;
 			sourceTree = "<group>";
 		};
-		6E746128261A4FC900A756D1 /* SnapKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SnapKit;
-			sourceTree = "<group>";
-		};
-		6E746129261A4FCE00A756D1 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		6E74612A261A501500A756D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C416C9E261DEDA600E17287 /* Storyboard */,
 				6E746127261A4F8900A756D1 /* SwiftUI */,
-				6E746128261A4FC900A756D1 /* SnapKit */,
-				6E746129261A4FCE00A756D1 /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,6 +447,7 @@
 			children = (
 				6EBC380C25B879BB0022031C /* Router */,
 				6EBC380B25B879B30022031C /* Coordinator */,
+				5C416C9C261DE8F800E17287 /* LinkHandler.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -772,6 +767,7 @@
 				6EBC384825B8813D0022031C /* AppDelegateFactory.swift in Sources */,
 				6EAE5C9425B70FA600FEEF12 /* AppDelegate.swift in Sources */,
 				6EAFDFE825B7269A007393DF /* Card.swift in Sources */,
+				5C416C9D261DE8F800E17287 /* LinkHandler.swift in Sources */,
 				6EBC383025B87C2D0022031C /* RootComponent.swift in Sources */,
 				6EBC38C225B8CDAD0022031C /* UIStackView + Extension.swift in Sources */,
 				6EBC381225B879E70022031C /* Coordinator.swift in Sources */,

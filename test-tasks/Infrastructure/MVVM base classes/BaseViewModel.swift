@@ -24,6 +24,9 @@ class BaseViewModel {
     
     /// Called when view controller called `viewWillDisappear`
     let viewWillDisappear: PassthroughSubject<Void, Never> = PassthroughSubject()
+    
+    /// Called when view controller called `bind(to viewModel:)`
+    let bind: PassthroughSubject<Void, Never> = PassthroughSubject()
 }
 
 

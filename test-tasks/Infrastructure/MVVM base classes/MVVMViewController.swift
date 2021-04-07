@@ -28,6 +28,7 @@ class MVVMViewController<ViewModel: BaseViewModel, Coordinator: BaseCoordinator>
     /// - SeeAlso: UIViewController.viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.bind(to: viewModel)
         viewModel.viewDidLoad.send()
     }
     
@@ -47,5 +48,10 @@ class MVVMViewController<ViewModel: BaseViewModel, Coordinator: BaseCoordinator>
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel.viewWillDisappear.send()
+    }
+    
+    /// Set here handles for view model updates
+    func bind(to viewModel: ViewModel) {
+        viewModel.bind.send()
     }
 }
