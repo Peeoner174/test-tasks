@@ -10,6 +10,8 @@ import Combine
 
 class BaseCoordinator: Coordinator, Drawable {
     
+    var bindings = Set<AnyCancellable>()
+    
     var childCoordinators : [Coordinator] = []
     
     func start() -> AnyPublisher<Void, Never> {

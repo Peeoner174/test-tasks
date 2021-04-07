@@ -15,9 +15,8 @@ protocol PexesoGameNavigationHandler: PexesoGameViewController {
     func handle(_ navigation: PexesoGameNavigation)
 }
 
-class PexesoGameCoordinator: BaseCoordinator {
-    private var bindings = Set<AnyCancellable>()
-
+final class PexesoGameCoordinator: BaseCoordinator {
+    
     @Injected(\.pexesoComponent.gameViewController) var rootViewController: PexesoGameViewController
     let router: Router
 

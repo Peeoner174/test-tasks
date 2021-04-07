@@ -31,6 +31,7 @@
 		6E746110261A009800A756D1 /* ExchangeRatesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E74610F261A009800A756D1 /* ExchangeRatesRepository.swift */; };
 		6E746122261A310C00A756D1 /* CurrencyRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E746121261A310C00A756D1 /* CurrencyRateView.swift */; };
 		6E746126261A390900A756D1 /* CurrencyRatesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E746125261A390900A756D1 /* CurrencyRatesListView.swift */; };
+		6E7C5332261B8CE600F8AA92 /* ExchangeRatesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C5331261B8CE600F8AA92 /* ExchangeRatesCoordinator.swift */; };
 		6E996B0F25D0385900126375 /* PushNotificationsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */; };
 		6E996B1D25D04B8600126375 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B1C25D04B8600126375 /* LogService.swift */; };
 		6EAC031025B9B51700B4921E /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC030F25B9B51700B4921E /* Pair.swift */; };
@@ -121,6 +122,7 @@
 		6E74610F261A009800A756D1 /* ExchangeRatesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesRepository.swift; sourceTree = "<group>"; };
 		6E746121261A310C00A756D1 /* CurrencyRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateView.swift; sourceTree = "<group>"; };
 		6E746125261A390900A756D1 /* CurrencyRatesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRatesListView.swift; sourceTree = "<group>"; };
+		6E7C5331261B8CE600F8AA92 /* ExchangeRatesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesCoordinator.swift; sourceTree = "<group>"; };
 		6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsAppDelegate.swift; sourceTree = "<group>"; };
 		6E996B1425D03C2F00126375 /* test-tasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "test-tasks.entitlements"; sourceTree = "<group>"; };
 		6E996B1C25D04B8600126375 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				6E74612A261A501500A756D1 /* View */,
 				5C871658260A37CE00423D52 /* ExchangeRatesViewModel.swift */,
+				6E7C5331261B8CE600F8AA92 /* ExchangeRatesCoordinator.swift */,
 			);
 			path = ExchangeRatesTraker;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				6EBC383425B87C7A0022031C /* AppCoordinator.swift in Sources */,
 				5CE7B8BF25FFB013009D2596 /* FetchCardsUseCase.swift in Sources */,
 				6EBC384B25B881550022031C /* CompositeAppDelegate.swift in Sources */,
+				6E7C5332261B8CE600F8AA92 /* ExchangeRatesCoordinator.swift in Sources */,
 				6EAFDFD825B716C1007393DF /* Button.swift in Sources */,
 				6EBC382525B87B2A0022031C /* UINavigationController + Extension.swift in Sources */,
 				5C4CBF66261B65600050A746 /* ExchangeRatesComponent.swift in Sources */,

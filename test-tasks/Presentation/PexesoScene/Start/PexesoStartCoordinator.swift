@@ -16,8 +16,7 @@ protocol PexesoStartNavigationHandler: PexesoStartViewController {
 }
 
 final class PexesoStartCoordinator: BaseCoordinator {
-    private var bindings = Set<AnyCancellable>()
-
+    
     @Injected(\.pexesoComponent.startViewController) var rootViewController: PexesoStartViewController
     private(set) var router: Router!
         

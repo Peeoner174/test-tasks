@@ -37,9 +37,24 @@ final class ExchangeRatesViewModelWrapper: ObservableObject {
         }
     }
 }
+final class ExchangeRatesCoordinator: BaseCoordinator {
+    
+}
+
+final class ExchangeRatesCoordinatorWrapper: ObservableObject {
+    var value: ExchangeRatesCoordinator!
+    
+    init() {}
+    
+    init(coordinator: ExchangeRatesCoordinator) {
+        self.value = coordinator
+    }
+}
 
 struct ExchangeRatesContentView: View {
     @ObservedObject var viewModelWrapper: ExchangeRatesViewModelWrapper
+    @ObservedObject var coordinatorWrapper = ExchangeRatesCoordinatorWrapper()
+    
     private var viewModel: ExchangeRatesViewModel { viewModelWrapper.value }
     
     init(viewModel: ExchangeRatesViewModel) {
