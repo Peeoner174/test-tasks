@@ -22,4 +22,3 @@ struct Сurrency: Equatable {
         }
     }
 }
-

@@ -18,18 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" verticalHuggingPriority="1" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cwy-xW-9ca" customClass="CardsHolderView" customModule="test_tasks" customModuleProvider="target">
-                                <rect key="frame" x="15" y="59" width="384" height="777"/>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cwy-xW-9ca" customClass="CardsHolderView" customModule="test_tasks" customModuleProvider="target">
+                                <rect key="frame" x="15" y="59" width="384" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lg8-1h-pKm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Cwy-xW-9ca" firstAttribute="top" secondItem="lg8-1h-pKm" secondAttribute="top" constant="15" id="44n-he-fNO"/>
-                            <constraint firstItem="Cwy-xW-9ca" firstAttribute="leading" secondItem="lg8-1h-pKm" secondAttribute="leading" constant="15" id="Yki-si-A7q"/>
-                            <constraint firstItem="Cwy-xW-9ca" firstAttribute="height" relation="lessThanOrEqual" secondItem="lg8-1h-pKm" secondAttribute="height" multiplier="0.95" id="bPp-cR-oiJ"/>
-                            <constraint firstItem="lg8-1h-pKm" firstAttribute="trailing" secondItem="Cwy-xW-9ca" secondAttribute="trailing" constant="15" id="yPU-m8-kRb"/>
+                            <constraint firstItem="Cwy-xW-9ca" firstAttribute="top" secondItem="lg8-1h-pKm" secondAttribute="top" constant="15" id="L6n-wt-FVx"/>
+                            <constraint firstItem="lg8-1h-pKm" firstAttribute="trailing" secondItem="Cwy-xW-9ca" secondAttribute="trailing" constant="15" id="Ml2-49-kuf"/>
+                            <constraint firstItem="Cwy-xW-9ca" firstAttribute="leading" secondItem="lg8-1h-pKm" secondAttribute="leading" constant="15" id="fjT-Ia-tzh"/>
+                            <constraint firstItem="lg8-1h-pKm" firstAttribute="bottom" secondItem="Cwy-xW-9ca" secondAttribute="bottom" constant="15" id="uWO-Aq-7M8"/>
                         </constraints>
                     </view>
                     <connections>
