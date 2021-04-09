@@ -88,13 +88,6 @@ class CardsHolderView: XibView {
             }
         }
     }
-
-    // MARK: - Lifecycle
-    
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        movesCounter = 0
-    }
     
     // MARK: - Public
     
