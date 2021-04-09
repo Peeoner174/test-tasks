@@ -24,9 +24,7 @@ class XibView: UIView {
     // MARK: - Private
     
     private func setup() {
-        guard let xibView = Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first as? UIView else {
-            return
-        }
+        let xibView = Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first as! UIView
         addSubview(xibView)
         sendSubviewToBack(xibView)
         
@@ -39,3 +37,5 @@ class XibView: UIView {
         })
     }
 }
+
+

@@ -4,6 +4,9 @@ import MoyaNetworkClient_Combine
 import NeedleFoundation
 import UIKit
 
+// swiftlint:disable unused_declaration
+private let needleDependenciesHash : String? = nil
+
 // MARK: - Registration
 
 public func registerProviderFactories() {
@@ -21,23 +24,33 @@ public func registerProviderFactories() {
 
 // MARK: - Providers
 
-/// ^->RootComponentImpl->ExchangeRatesComponent
-private class ExchangeRatesDependencycef0384644d727ea885dProvider: ExchangeRatesDependency {
+private class ExchangeRatesDependencycef0384644d727ea885dBaseProvider: ExchangeRatesDependency {
     var exchangeRatesViewModel: ExchangeRatesViewModel {
         return rootComponentImpl.exchangeRatesViewModel
     }
     private let rootComponentImpl: RootComponentImpl
-    init(component: NeedleFoundation.Scope) {
-        rootComponentImpl = component.parent as! RootComponentImpl
+    init(rootComponentImpl: RootComponentImpl) {
+        self.rootComponentImpl = rootComponentImpl
     }
 }
-/// ^->RootComponentImpl->PexesoComponent
-private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependency {
+/// ^->RootComponentImpl->ExchangeRatesComponent
+private class ExchangeRatesDependencycef0384644d727ea885dProvider: ExchangeRatesDependencycef0384644d727ea885dBaseProvider {
+    init(component: NeedleFoundation.Scope) {
+        super.init(rootComponentImpl: component.parent as! RootComponentImpl)
+    }
+}
+private class PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider: PexesoModuleDependency {
     var pexesoViewModel: PexesoViewModel {
         return rootComponentImpl.pexesoViewModel
     }
     private let rootComponentImpl: RootComponentImpl
+    init(rootComponentImpl: RootComponentImpl) {
+        self.rootComponentImpl = rootComponentImpl
+    }
+}
+/// ^->RootComponentImpl->PexesoComponent
+private class PexesoModuleDependencycf9b73615cbf04704ae7Provider: PexesoModuleDependencycf9b73615cbf04704ae7BaseProvider {
     init(component: NeedleFoundation.Scope) {
-        rootComponentImpl = component.parent as! RootComponentImpl
+        super.init(rootComponentImpl: component.parent as! RootComponentImpl)
     }
 }
