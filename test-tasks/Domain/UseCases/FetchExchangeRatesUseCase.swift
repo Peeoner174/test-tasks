@@ -5,8 +5,8 @@
 //  Created by Pavel Kochenda on 31.03.2021.
 //
 
-import UseCaseKit
 import Combine
+import UseCase_Combine
 
 enum FetchExchangeRatesCommand: Command {
     typealias State = FetchState<Сurrency.ConversionRates>

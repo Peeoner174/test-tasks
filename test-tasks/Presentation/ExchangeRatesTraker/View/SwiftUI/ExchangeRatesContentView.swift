@@ -34,7 +34,7 @@ final class ExchangeRatesViewModelWrapper: ObservableObject {
             default:
                 break
             }
-        }
+        }.store(in: &value.bindings)
     }
 }
 final class ExchangeRatesCoordinator: BaseCoordinator {

@@ -23,6 +23,7 @@
 		5C871659260A37CE00423D52 /* ExchangeRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C871658260A37CE00423D52 /* ExchangeRatesViewModel.swift */; };
 		5C8EB4E4260DF0F400F15888 /* ExchangeRatesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EB4E3260DF0F400F15888 /* ExchangeRatesDTO.swift */; };
 		5C8EB4E6260DFCB500F15888 /* ExchangeRatesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EB4E5260DFCB500F15888 /* ExchangeRatesApi.swift */; };
+		5C9C6A1226259F050095FB5F /* UseCase-Combine in Frameworks */ = {isa = PBXBuildFile; productRef = 5C9C6A1126259F050095FB5F /* UseCase-Combine */; };
 		5CE7B8BF25FFB013009D2596 /* FetchCardsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7B8BE25FFB013009D2596 /* FetchCardsUseCase.swift */; };
 		6E33C4C125B865990028E07D /* PexesoStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33C4C025B865990028E07D /* PexesoStartViewController.swift */; };
 		6E34089825B83EB700259B0F /* Pexeso.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E34089725B83EB700259B0F /* Pexeso.storyboard */; };
@@ -118,6 +119,8 @@
 		5C871658260A37CE00423D52 /* ExchangeRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewModel.swift; sourceTree = "<group>"; };
 		5C8EB4E3260DF0F400F15888 /* ExchangeRatesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesDTO.swift; sourceTree = "<group>"; };
 		5C8EB4E5260DFCB500F15888 /* ExchangeRatesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesApi.swift; sourceTree = "<group>"; };
+		5C9C6A1526259F260095FB5F /* UseCase-Combine */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "UseCase-Combine"; path = "../UseCase-Combine"; sourceTree = "<group>"; };
+		5C9C6A162625AF480095FB5F /* UseCaseKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UseCaseKit; path = ../UseCaseKit; sourceTree = "<group>"; };
 		5CE7B8BE25FFB013009D2596 /* FetchCardsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCardsUseCase.swift; sourceTree = "<group>"; };
 		6E33C4C025B865990028E07D /* PexesoStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartViewController.swift; sourceTree = "<group>"; };
 		6E34089725B83EB700259B0F /* Pexeso.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pexeso.storyboard; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 			files = (
 				6EC6899426122289001C9CE6 /* Bagel in Frameworks */,
 				6EAD788625F6542C00AFE6FD /* SFSafeSymbols in Frameworks */,
+				5C9C6A1226259F050095FB5F /* UseCase-Combine in Frameworks */,
 				6EAD787825F651E900AFE6FD /* NeedleFoundation in Frameworks */,
 				6EAD788C25F6566200AFE6FD /* SwiftyBeaver in Frameworks */,
 				6E74610A2619FF5B00A756D1 /* MoyaNetworkClient-Combine in Frameworks */,
@@ -330,6 +334,8 @@
 		6EAE5C8725B70FA600FEEF12 = {
 			isa = PBXGroup;
 			children = (
+				5C9C6A162625AF480095FB5F /* UseCaseKit */,
+				5C9C6A1526259F260095FB5F /* UseCase-Combine */,
 				6EAE5C9225B70FA600FEEF12 /* test-tasks */,
 				6EAD789A25F68B9800AFE6FD /* test-tasks.app */,
 			);
@@ -656,6 +662,7 @@
 				6EDAB2DB26024B390053F7AA /* UseCaseKit */,
 				6EC6899326122289001C9CE6 /* Bagel */,
 				6E7461092619FF5B00A756D1 /* MoyaNetworkClient-Combine */,
+				5C9C6A1126259F050095FB5F /* UseCase-Combine */,
 			);
 			productName = "simple-memory-game";
 			productReference = 6EAD789A25F68B9800AFE6FD /* test-tasks.app */;
@@ -691,6 +698,7 @@
 				6EDAB2DA26024B390053F7AA /* XCRemoteSwiftPackageReference "UseCaseKit" */,
 				6EC6899226122289001C9CE6 /* XCRemoteSwiftPackageReference "Bagel" */,
 				6E7461082619FF5B00A756D1 /* XCRemoteSwiftPackageReference "MoyaNetworkClient-Combine" */,
+				5C9C6A1026259F050095FB5F /* XCRemoteSwiftPackageReference "UseCase-Combine" */,
 			);
 			productRefGroup = 6EAE5C8725B70FA600FEEF12;
 			projectDirPath = "";
@@ -1009,6 +1017,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5C9C6A1026259F050095FB5F /* XCRemoteSwiftPackageReference "UseCase-Combine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Peeoner174/UseCase-Combine";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		6E7461082619FF5B00A756D1 /* XCRemoteSwiftPackageReference "MoyaNetworkClient-Combine" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Peeoner174/MoyaNetworkClient-Combine.git";
@@ -1060,6 +1076,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5C9C6A1126259F050095FB5F /* UseCase-Combine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C9C6A1026259F050095FB5F /* XCRemoteSwiftPackageReference "UseCase-Combine" */;
+			productName = "UseCase-Combine";
+		};
 		6E7461092619FF5B00A756D1 /* MoyaNetworkClient-Combine */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6E7461082619FF5B00A756D1 /* XCRemoteSwiftPackageReference "MoyaNetworkClient-Combine" */;

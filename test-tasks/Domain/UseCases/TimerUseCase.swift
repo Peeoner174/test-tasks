@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UseCaseKit
+import UseCase_Combine
 
 enum TimerState: Equatable {
     case pause(Int)

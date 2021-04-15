@@ -6,7 +6,7 @@
 //
 
 import Combine
-import UseCaseKit
+import UseCase_Combine
 
 protocol ExchangeRatesViewModel: BaseViewModel {
     var exchangeRatesUseCase: UseCase<FetchExchangeRatesCommand> { get }

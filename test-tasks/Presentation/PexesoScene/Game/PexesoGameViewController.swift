@@ -25,19 +25,21 @@ class PexesoGameViewController: MVVMViewController<AnyPexesoViewModel, PexesoGam
     override func bind(to viewModel: AnyPexesoViewModel) {
         super.bind(to: viewModel)
         
-        viewModel.fetchCardsUseCase.state.removeDuplicates().sink(on: .main) { [weak self] state in
-            guard let self = self else { return }
-            switch state {
-            case .loading:
-                break
-            case .object(let cards):
-                self.cardsHolderView.dataModelUpdate(cards)
-            case .complete:
-                break
-            default:
-                break
-            }
-        }
+        // USECASE-COMBINE
+        viewModel.fetchCardsUseCase.state.removeDuplicates().receive(on: DispatchQueue.main)
+            .sink { [weak self] state in
+                guard let self = self else { return }
+                switch state {
+                case .loading:
+                    break
+                case .object(let cards):
+                    self.cardsHolderView.dataModelUpdate(cards)
+                case .complete:
+                    break
+                default:
+                    break
+                }
+            }.store(in: &bindings)
     }
 }
 

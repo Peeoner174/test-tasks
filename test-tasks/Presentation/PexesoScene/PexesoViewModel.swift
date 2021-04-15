@@ -6,7 +6,7 @@
 //
 
 import Combine
-import UseCaseKit
+import UseCase_Combine
 
 protocol PexesoViewModelInput {
     func updateLevel(_ level: Int)
@@ -70,8 +70,9 @@ final class AnyPexesoViewModel: PexesoViewModel {
     init(wrappedValue: PexesoViewModel) {
         self.wrappedValue = wrappedValue
         super.init()
-        
-        viewDidLoad.sink { [weak self] _ in
+                
+        let publusher = self.wrappedValue.viewDidLoad.multicast(subject: self.viewDidLoad)
+        publusher.sink { [weak self] _ in
             guard let self = self else { return }
             self.fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: self.level.value))
         }.store(in: &bindings)
