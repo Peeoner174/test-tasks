@@ -10,7 +10,7 @@
 		5C1C52422601294B00EFC94A /* CardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C52412601294B00EFC94A /* CardsRepository.swift */; };
 		5C1C5245260129AE00EFC94A /* CardsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C5244260129AE00EFC94A /* CardsRepositoryImpl.swift */; };
 		5C2D7D0C25F8FC3A00261174 /* PexesoGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0B25F8FC3A00261174 /* PexesoGameCoordinator.swift */; };
-		5C2D7D0E25F8FC5400261174 /* PexesoStartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */; };
+		5C2D7D0E25F8FC5400261174 /* PexesoMainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D7D0D25F8FC5400261174 /* PexesoMainMenuCoordinator.swift */; };
 		5C416C9D261DE8F800E17287 /* LinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C416C9C261DE8F800E17287 /* LinkHandler.swift */; };
 		5C436B242614A65E00F9F9BC /* Сurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C436B232614A65E00F9F9BC /* Сurrency.swift */; };
 		5C436B302614B87D00F9F9BC /* FetchExchangeRatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C436B2F2614B87D00F9F9BC /* FetchExchangeRatesUseCase.swift */; };
@@ -25,7 +25,7 @@
 		5C8EB4E6260DFCB500F15888 /* ExchangeRatesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EB4E5260DFCB500F15888 /* ExchangeRatesApi.swift */; };
 		5C9C6A1226259F050095FB5F /* UseCase-Combine in Frameworks */ = {isa = PBXBuildFile; productRef = 5C9C6A1126259F050095FB5F /* UseCase-Combine */; };
 		5CE7B8BF25FFB013009D2596 /* FetchCardsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7B8BE25FFB013009D2596 /* FetchCardsUseCase.swift */; };
-		6E33C4C125B865990028E07D /* PexesoStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33C4C025B865990028E07D /* PexesoStartViewController.swift */; };
+		6E33C4C125B865990028E07D /* PexesoMainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33C4C025B865990028E07D /* PexesoMainMenuViewController.swift */; };
 		6E34089825B83EB700259B0F /* Pexeso.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E34089725B83EB700259B0F /* Pexeso.storyboard */; };
 		6E34089C25B83F5D00259B0F /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E34089B25B83F5D00259B0F /* XibView.swift */; };
 		6E3408A625B840CC00259B0F /* MemoryGameApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3408A525B840CC00259B0F /* MemoryGameApi.swift */; };
@@ -34,10 +34,11 @@
 		6E746122261A310C00A756D1 /* CurrencyRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E746121261A310C00A756D1 /* CurrencyRateView.swift */; };
 		6E746126261A390900A756D1 /* CurrencyRatesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E746125261A390900A756D1 /* CurrencyRatesListView.swift */; };
 		6E7C5332261B8CE600F8AA92 /* ExchangeRatesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C5331261B8CE600F8AA92 /* ExchangeRatesCoordinator.swift */; };
+		6E8D31C726347E1A00BF3287 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D31C626347E1A00BF3287 /* NeedleGenerated.swift */; };
 		6E996B0F25D0385900126375 /* PushNotificationsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */; };
 		6E996B1D25D04B8600126375 /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E996B1C25D04B8600126375 /* LogService.swift */; };
 		6EAC031025B9B51700B4921E /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC030F25B9B51700B4921E /* Pair.swift */; };
-		6EAC89FB25B7720400DD3B0C /* PexesoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC89FA25B7720400DD3B0C /* PexesoViewModel.swift */; };
+		6EAC89FB25B7720400DD3B0C /* PexesoGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAC89FA25B7720400DD3B0C /* PexesoGameViewModel.swift */; };
 		6EAD787825F651E900AFE6FD /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 6EAD787725F651E900AFE6FD /* NeedleFoundation */; };
 		6EAD788625F6542C00AFE6FD /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 6EAD788525F6542C00AFE6FD /* SFSafeSymbols */; };
 		6EAD788C25F6566200AFE6FD /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 6EAD788B25F6566200AFE6FD /* SwiftyBeaver */; };
@@ -79,7 +80,6 @@
 		6EC6899426122289001C9CE6 /* Bagel in Frameworks */ = {isa = PBXBuildFile; productRef = 6EC6899326122289001C9CE6 /* Bagel */; };
 		6EC68996261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC68995261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift */; };
 		6ECC63D525FA746E001C9903 /* Publisher + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC63D425FA746E001C9903 /* Publisher + Extension.swift */; };
-		6ECC63DC25FA988F001C9903 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC63DB25FA988F001C9903 /* NeedleGenerated.swift */; };
 		6ECC63DE25FAA4C0001C9903 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC63DD25FAA4C0001C9903 /* AppAppearance.swift */; };
 		6ECC63E025FAA4FB001C9903 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC63DF25FAA4FB001C9903 /* AppConfiguration.swift */; };
 		6EDAB2DC26024B390053F7AA /* UseCaseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6EDAB2DB26024B390053F7AA /* UseCaseKit */; };
@@ -106,7 +106,7 @@
 		5C1C52412601294B00EFC94A /* CardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRepository.swift; sourceTree = "<group>"; };
 		5C1C5244260129AE00EFC94A /* CardsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRepositoryImpl.swift; sourceTree = "<group>"; };
 		5C2D7D0B25F8FC3A00261174 /* PexesoGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoGameCoordinator.swift; sourceTree = "<group>"; };
-		5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartCoordinator.swift; sourceTree = "<group>"; };
+		5C2D7D0D25F8FC5400261174 /* PexesoMainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoMainMenuCoordinator.swift; sourceTree = "<group>"; };
 		5C416C9C261DE8F800E17287 /* LinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkHandler.swift; sourceTree = "<group>"; };
 		5C436B232614A65E00F9F9BC /* Сurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Сurrency.swift"; sourceTree = "<group>"; };
 		5C436B2F2614B87D00F9F9BC /* FetchExchangeRatesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchExchangeRatesUseCase.swift; sourceTree = "<group>"; };
@@ -120,9 +120,8 @@
 		5C8EB4E3260DF0F400F15888 /* ExchangeRatesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesDTO.swift; sourceTree = "<group>"; };
 		5C8EB4E5260DFCB500F15888 /* ExchangeRatesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesApi.swift; sourceTree = "<group>"; };
 		5C9C6A1526259F260095FB5F /* UseCase-Combine */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "UseCase-Combine"; path = "../UseCase-Combine"; sourceTree = "<group>"; };
-		5C9C6A162625AF480095FB5F /* UseCaseKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UseCaseKit; path = ../UseCaseKit; sourceTree = "<group>"; };
 		5CE7B8BE25FFB013009D2596 /* FetchCardsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCardsUseCase.swift; sourceTree = "<group>"; };
-		6E33C4C025B865990028E07D /* PexesoStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoStartViewController.swift; sourceTree = "<group>"; };
+		6E33C4C025B865990028E07D /* PexesoMainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoMainMenuViewController.swift; sourceTree = "<group>"; };
 		6E34089725B83EB700259B0F /* Pexeso.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pexeso.storyboard; sourceTree = "<group>"; };
 		6E34089B25B83F5D00259B0F /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		6E3408A525B840CC00259B0F /* MemoryGameApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApi.swift; sourceTree = "<group>"; };
@@ -130,11 +129,12 @@
 		6E746121261A310C00A756D1 /* CurrencyRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateView.swift; sourceTree = "<group>"; };
 		6E746125261A390900A756D1 /* CurrencyRatesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRatesListView.swift; sourceTree = "<group>"; };
 		6E7C5331261B8CE600F8AA92 /* ExchangeRatesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesCoordinator.swift; sourceTree = "<group>"; };
+		6E8D31C626347E1A00BF3287 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		6E996B0E25D0385900126375 /* PushNotificationsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsAppDelegate.swift; sourceTree = "<group>"; };
 		6E996B1425D03C2F00126375 /* test-tasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "test-tasks.entitlements"; sourceTree = "<group>"; };
 		6E996B1C25D04B8600126375 /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
 		6EAC030F25B9B51700B4921E /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
-		6EAC89FA25B7720400DD3B0C /* PexesoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoViewModel.swift; sourceTree = "<group>"; };
+		6EAC89FA25B7720400DD3B0C /* PexesoGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoGameViewModel.swift; sourceTree = "<group>"; };
 		6EAD789A25F68B9800AFE6FD /* test-tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EAE5C9325B70FA600FEEF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EAE5C9725B70FA600FEEF12 /* PexesoGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexesoGameViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +174,6 @@
 		6EBC38C125B8CDAD0022031C /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		6EC68995261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesRepositoryImpl.swift; sourceTree = "<group>"; };
 		6ECC63D425FA746E001C9903 /* Publisher + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher + Extension.swift"; sourceTree = "<group>"; };
-		6ECC63DB25FA988F001C9903 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		6ECC63DD25FAA4C0001C9903 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		6ECC63DF25FAA4FB001C9903 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		6EDAB32526028A780053F7AA /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
@@ -294,13 +293,13 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
-		6E33C4BF25B8656D0028E07D /* Start */ = {
+		6E33C4BF25B8656D0028E07D /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				6E33C4C025B865990028E07D /* PexesoStartViewController.swift */,
-				5C2D7D0D25F8FC5400261174 /* PexesoStartCoordinator.swift */,
+				6E33C4C025B865990028E07D /* PexesoMainMenuViewController.swift */,
+				5C2D7D0D25F8FC5400261174 /* PexesoMainMenuCoordinator.swift */,
 			);
-			path = Start;
+			path = MainMenu;
 			sourceTree = "<group>";
 		};
 		6E3408A425B840C200259B0F /* Api */ = {
@@ -334,7 +333,6 @@
 		6EAE5C8725B70FA600FEEF12 = {
 			isa = PBXGroup;
 			children = (
-				5C9C6A162625AF480095FB5F /* UseCaseKit */,
 				5C9C6A1526259F260095FB5F /* UseCase-Combine */,
 				6EAE5C9225B70FA600FEEF12 /* test-tasks */,
 				6EAD789A25F68B9800AFE6FD /* test-tasks.app */,
@@ -399,9 +397,9 @@
 			isa = PBXGroup;
 			children = (
 				6E33C4BC25B863FE0028E07D /* Game */,
-				6E33C4BF25B8656D0028E07D /* Start */,
+				6E33C4BF25B8656D0028E07D /* MainMenu */,
 				6E34089725B83EB700259B0F /* Pexeso.storyboard */,
-				6EAC89FA25B7720400DD3B0C /* PexesoViewModel.swift */,
+				6EAC89FA25B7720400DD3B0C /* PexesoGameViewModel.swift */,
 			);
 			path = PexesoScene;
 			sourceTree = "<group>";
@@ -564,7 +562,7 @@
 		6ECC63DA25FA981C001C9903 /* DIContainer */ = {
 			isa = PBXGroup;
 			children = (
-				6ECC63DB25FA988F001C9903 /* NeedleGenerated.swift */,
+				6E8D31C626347E1A00BF3287 /* NeedleGenerated.swift */,
 				6EBC382E25B87C180022031C /* Components */,
 			);
 			path = DIContainer;
@@ -727,7 +725,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		6EBC382C25B87BC20022031C /* Needle */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -770,6 +768,7 @@
 				6EAE5C9825B70FA600FEEF12 /* PexesoGameViewController.swift in Sources */,
 				6EBC38B425B8A0530022031C /* Label.swift in Sources */,
 				6EBC382125B87AF20022031C /* ViewController.swift in Sources */,
+				6E8D31C726347E1A00BF3287 /* NeedleGenerated.swift in Sources */,
 				6EC68996261222DD001C9CE6 /* ExchangeRatesRepositoryImpl.swift in Sources */,
 				5C871659260A37CE00423D52 /* ExchangeRatesViewModel.swift in Sources */,
 				6EBC38BC25B8B9980022031C /* Array + Extension.swift in Sources */,
@@ -777,7 +776,7 @@
 				5C4CBF59261B27E10050A746 /* BaseViewModel.swift in Sources */,
 				5C4CBF64261B56090050A746 /* MVVMViewController.swift in Sources */,
 				6EAFDFD225B7152C007393DF /* ChainOfResponsibility.swift in Sources */,
-				6E33C4C125B865990028E07D /* PexesoStartViewController.swift in Sources */,
+				6E33C4C125B865990028E07D /* PexesoMainMenuViewController.swift in Sources */,
 				6EBC384825B8813D0022031C /* AppDelegateFactory.swift in Sources */,
 				6EAE5C9425B70FA600FEEF12 /* AppDelegate.swift in Sources */,
 				6EAFDFE825B7269A007393DF /* Card.swift in Sources */,
@@ -786,7 +785,7 @@
 				6EBC38C225B8CDAD0022031C /* UIStackView + Extension.swift in Sources */,
 				6EBC381225B879E70022031C /* Coordinator.swift in Sources */,
 				6EAFDFE525B72530007393DF /* CardsHolderView.swift in Sources */,
-				6EAC89FB25B7720400DD3B0C /* PexesoViewModel.swift in Sources */,
+				6EAC89FB25B7720400DD3B0C /* PexesoGameViewModel.swift in Sources */,
 				5C645CEA26087A6700E6815C /* Repository.swift in Sources */,
 				6EE3F473261F068400895EB4 /* UICollectionView + Extension.swift in Sources */,
 				6E746122261A310C00A756D1 /* CurrencyRateView.swift in Sources */,
@@ -797,8 +796,7 @@
 				6EBC381825B87A1C0022031C /* Drawable.swift in Sources */,
 				6E996B1D25D04B8600126375 /* LogService.swift in Sources */,
 				6EBC381B25B87A780022031C /* Typealias.swift in Sources */,
-				6ECC63DC25FA988F001C9903 /* NeedleGenerated.swift in Sources */,
-				5C2D7D0E25F8FC5400261174 /* PexesoStartCoordinator.swift in Sources */,
+				5C2D7D0E25F8FC5400261174 /* PexesoMainMenuCoordinator.swift in Sources */,
 				6EAFDFDC25B717BB007393DF /* Assert + Unimplemented.swift in Sources */,
 				6EDAB32826028B060053F7AA /* TimerUseCase.swift in Sources */,
 				6EBC381E25B87ABF0022031C /* NavigationController.swift in Sources */,

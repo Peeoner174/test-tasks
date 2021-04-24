@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="141" y="70"/>
         </scene>
-        <!--Pexeso Start View Controller-->
+        <!--Pexeso Main Menu View Controller-->
         <scene sceneID="gZu-BO-zwC">
             <objects>
-                <viewController storyboardIdentifier="PexesoStartViewController" id="vsD-n3-pEZ" customClass="PexesoStartViewController" customModule="test_tasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PexesoMainMenuViewController" id="vsD-n3-pEZ" customClass="PexesoMainMenuViewController" customModule="test_tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="imN-xk-ScQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,17 +7,17 @@
 
 import Combine
 
-enum PexesoStartNavigation {
+enum PexesoMainMenuNavigation {
     case game
 }
 
-protocol PexesoStartNavigationHandler: PexesoStartViewController {
-    func handle(_ navigation: PexesoStartNavigation)
+protocol PexesoMainMenuNavigationHandler: PexesoMainMenuViewController {
+    func handle(_ navigation: PexesoMainMenuNavigation)
 }
 
-final class PexesoStartCoordinator: BaseCoordinator {
+final class PexesoMainMenuCoordinator: BaseCoordinator {
     
-    @Injected(\.pexesoComponent.startViewController) var rootViewController: PexesoStartViewController
+    @Injected(\.pexesoComponent.mainMenuViewController) var rootViewController: PexesoMainMenuViewController
     private(set) var router: Router!
         
     init(router: Router) {
@@ -39,7 +39,7 @@ final class PexesoStartCoordinator: BaseCoordinator {
         rootViewController
     }
     
-    func goTo(_ navigation: PexesoStartNavigation, routeBlock: (Drawable, Router) -> Void) {
+    func goTo(_ navigation: PexesoMainMenuNavigation, routeBlock: (Drawable, Router) -> Void) {
         let coordinator: Coordinator
         switch navigation {
         case .game:

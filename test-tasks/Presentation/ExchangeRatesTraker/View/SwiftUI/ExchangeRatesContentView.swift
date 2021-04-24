@@ -60,6 +60,7 @@ struct ExchangeRatesContentView: View {
     init(viewModel: ExchangeRatesViewModel) {
         self.viewModelWrapper = ExchangeRatesViewModelWrapper(viewModel: viewModel)
         viewModel.exchangeRatesUseCase.dispatcher.dispatch(.fetchLast(base: ""))
+//        dispatch(.fetchLast(base: ""))
     }
     
     var body: some View {

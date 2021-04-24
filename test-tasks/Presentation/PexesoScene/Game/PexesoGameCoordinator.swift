@@ -38,7 +38,7 @@ final class PexesoGameCoordinator: BaseCoordinator {
         let coordinator: Coordinator
         switch navigation {
         case .start:
-            coordinator = PexesoStartCoordinator(router: RouterImpl(navigationController: router.navigationController))
+            coordinator = PexesoMainMenuCoordinator(router: RouterImpl(navigationController: router.navigationController))
         }
         store(coordinator: coordinator)
         

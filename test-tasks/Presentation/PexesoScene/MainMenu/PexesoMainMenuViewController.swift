@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class PexesoStartViewController: MVVMViewController<AnyPexesoViewModel, PexesoStartCoordinator> {
+class PexesoMainMenuViewController: MVVMViewController<AnyPexesoMainMenuViewModel, PexesoMainMenuCoordinator> {
     
     // MARK: - UI Properties
     
@@ -24,7 +24,7 @@ class PexesoStartViewController: MVVMViewController<AnyPexesoViewModel, PexesoSt
         selectLevelSlider.maximumValue = Float(self.viewModel.levelRange.last!)
     }
     
-    override func bind(to viewModel: AnyPexesoViewModel) {
+    override func bind(to viewModel: AnyPexesoMainMenuViewModel) {
         super.bind(to: viewModel)
         
         viewModel.level.sink { [weak self] in
@@ -50,8 +50,8 @@ class PexesoStartViewController: MVVMViewController<AnyPexesoViewModel, PexesoSt
 
 // MARK: - Perform Routing
 
-extension PexesoStartViewController: PexesoStartNavigationHandler {
-    func handle(_ navigation: PexesoStartNavigation) {
+extension PexesoMainMenuViewController: PexesoMainMenuNavigationHandler {
+    func handle(_ navigation: PexesoMainMenuNavigation) {
         coordinator.goTo(navigation) { drawable, router in
             switch navigation {
             case .game:

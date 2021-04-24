@@ -17,7 +17,7 @@ class AppCoordinator: BaseCoordinator {
     }
 
     override func start() -> AnyPublisher<Void, Never> {
-        let coordinator = PexesoStartCoordinator()
+        let coordinator = PexesoMainMenuCoordinator()
         store(coordinator: coordinator)
                 
         let coordinatorFinish = coordinator.start().handleEvents(receiveCompletion: { [weak self] _ in

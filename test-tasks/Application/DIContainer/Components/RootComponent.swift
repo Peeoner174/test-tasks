@@ -8,9 +8,16 @@
 import NeedleFoundation
 import MoyaNetworkClient_Combine
 import UIKit
+import UseCase_Combine
 
 protocol RootComponent: Scope {
+    
+    // MARK: Presentation layer
+    
     var pexesoComponent: PexesoComponent { get }
+    
+    // MARK: Data layer
+    
     var networkClient: NetworkClient { get }
     var networkClientRemoteMock: NetworkClient { get }
     var networkClientLocalMock: NetworkClient { get }
@@ -24,6 +31,34 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
         super.init()
     }
     fileprivate static let instance: RootComponentImpl = .init()
+    
+    // MARK: Presentation layer
+    
+    // 1. Pexeso
+    
+    var pexesoComponent: PexesoComponent {
+        PexesoComponent(parent: self)
+    }
+     
+    var pexesoGameViewModel: PexesoGameViewModel {
+        PexesoGameViewModelOfflineImpl(timerUseCase: .timer(), fetchCardsUseCase: .fetchCardsDefault())
+    }
+    
+    var pexesonMainMenuViewModel: PexesoMainMenuViewModel {
+        PexesoMainMenuViewModelImpl(withLevel: 1, levelRange: 1...6)
+    }
+    
+    // 2. ExchangeRates
+    
+    var exchangeRatesComponent: ExchangeRatesComponent {
+        ExchangeRatesComponent(parent: self)
+    }
+    
+    var exchangeRatesViewModel: ExchangeRatesViewModel {
+        shared { ExchangeRatesViewModelImpl() }
+    }
+    
+    // MARK: Data layer
     
     var networkClient: NetworkClient {
         shared { NetworkClient(jsonDecoder: JSONDecoder()) }
@@ -39,26 +74,6 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
     
     var coreDataClient: CoreDataStorage {
         shared { CoreDataStorage() }
-    }
-
-    // MARK: Pexeso
-    
-    var pexesoComponent: PexesoComponent {
-        PexesoComponent(parent: self)
-    }
-     
-    var pexesoViewModel: PexesoViewModel {
-        shared { PexesoViewModelOfflineImpl(withLevel: 1, levelRange: 1...5) }
-    }
-    
-    // MARK: Exchange Rates
-    
-    var exchangeRatesComponent: ExchangeRatesComponent {
-        ExchangeRatesComponent(parent: self)
-    }
-    
-    var exchangeRatesViewModel: ExchangeRatesViewModel {
-        shared { ExchangeRatesViewModelImpl() }
     }
 }
 

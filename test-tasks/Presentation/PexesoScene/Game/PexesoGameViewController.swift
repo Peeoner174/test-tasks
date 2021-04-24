@@ -7,8 +7,9 @@
 
 import UIKit
 import Combine
+import UseCase_Combine
 
-class PexesoGameViewController: MVVMViewController<AnyPexesoViewModel, PexesoGameCoordinator> {
+class PexesoGameViewController: MVVMViewController<AnyPexesoGameViewModel, PexesoGameCoordinator> {
         
     // MARK: - UI Properties
     
@@ -22,7 +23,7 @@ class PexesoGameViewController: MVVMViewController<AnyPexesoViewModel, PexesoGam
         cardsHolderView.configure(delegate: self)
     }
     
-    override func bind(to viewModel: AnyPexesoViewModel) {
+    override func bind(to viewModel: AnyPexesoGameViewModel) {
         super.bind(to: viewModel)
         
         // USECASE-COMBINE
@@ -40,6 +41,18 @@ class PexesoGameViewController: MVVMViewController<AnyPexesoViewModel, PexesoGam
                     break
                 }
             }.store(in: &bindings)
+        
+        viewModel.timerUseCase.state.receive(on: DispatchQueue.main).sink { [weak self] state in
+            guard let self = self else { return }
+            switch state {
+            case .counting(let second):
+                print(second)
+            case .pause(let second):
+                print(second)
+            case .stopped:
+                print("stopped")
+            }
+        }.store(in: &bindings)
     }
 }
 
@@ -47,7 +60,9 @@ class PexesoGameViewController: MVVMViewController<AnyPexesoViewModel, PexesoGam
 
 extension PexesoGameViewController: CardsHolderViewDelegate {
     func restartButtonTapped() {
-        viewModel.fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: viewModel.level.value))
+//        viewModel.fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: viewModel.level.value))
+        
+        viewModel.timerUseCase.dispatcher.dispatch(.start)
     }
 }
 
@@ -63,3 +78,4 @@ extension PexesoGameViewController: PexesoGameNavigationHandler {
         }
     }
 }
+

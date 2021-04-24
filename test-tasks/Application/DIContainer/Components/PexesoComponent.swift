@@ -8,20 +8,21 @@
 import NeedleFoundation
 
 protocol PexesoModuleDependency: Dependency {
-    var pexesoViewModel: PexesoViewModel { get }
+    var pexesoGameViewModel: PexesoGameViewModel { get }
+    var pexesoMainMenuViewModel: PexesoMainMenuViewModel { get }
 }
 
 class PexesoComponent: Component<PexesoModuleDependency> {
     
-    var startViewController: PexesoStartViewController {
+    var mainMenuViewController: PexesoMainMenuViewController {
         .instantiate(fromStoryboard: .pexeso) { coder in
-            PexesoStartViewController(coder: coder, viewModel: AnyPexesoViewModel(wrappedValue: self.dependency.pexesoViewModel))
+            PexesoMainMenuViewController(coder: coder, viewModel: AnyPexesoMainMenuViewModel(wrappedValue: self.dependency.pexesoMainMenuViewModel))
         }
     }
     
     var gameViewController: PexesoGameViewController {
         .instantiate(fromStoryboard: .pexeso) { coder in
-            PexesoGameViewController(coder: coder, viewModel: AnyPexesoViewModel(wrappedValue: self.dependency.pexesoViewModel))
+            PexesoGameViewController(coder: coder, viewModel: AnyPexesoGameViewModel(wrappedValue: self.dependency.pexesoGameViewModel))
         }
     }
 }
