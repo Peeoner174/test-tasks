@@ -31,7 +31,7 @@ final class PexesoGameViewModelOfflineImpl: PexesoGameViewModel {
     }
     
     func setLevel(_ level: Int) {
-        fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: level), async: true)
+        fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: level * 2), async: true)
         timerUseCase.dispatcher.dispatch(.start)
     }
 }
@@ -50,7 +50,7 @@ final class PexesoGameViewModelRestImpl: PexesoGameViewModel {
     }
     
     func setLevel(_ level: Int) {
-        fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: level), async: true)
+        fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: level * 2), async: true)
         timerUseCase.dispatcher.dispatch(.start)
     }
 }

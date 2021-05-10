@@ -21,15 +21,21 @@ extension UseCase {
             var bindings = Set<AnyCancellable>()
             let cardsRepository = CardsRepositoryImpl()
             
-            let standartOnStartFetchCommandBlock: VoidClosure = {
-                logger.debug("use case start")
-                print(Thread.current)
+            // MARK: - Helpers funcs
+            
+            func makePairsAndShuffled(_ cards: [Card]) -> [Card] {
+                cards.reduce(into: []) { result, card in
+                    result.append(contentsOf: [card, card])
+                }.shuffled()
+            }
+            
+            // MARK: - Response handle blocks
+            
+            let onReceiveRequestBlock: ((Subscribers.Demand) -> Void)? = { _ in
                 store.update { $0 = .loading }
             }
                         
-            let standartOnReceiveCompletionBlock: ((Subscribers.Completion<Error>) -> Void)? = { completion in
-                logger.debug("use case complete")
-                print(Thread.current)
+            let onCompletionBlock: ((Subscribers.Completion<Error>) -> Void)? = { completion in
                 switch completion {
                 case .finished:
                     store.update { $0 = .complete }
@@ -38,24 +44,37 @@ extension UseCase {
                 }
             }
             
+            let onReseiveValueBlock: VoidOutputClosure<[Card]> = { cards in
+                store.update { $0 = .object(makePairsAndShuffled(cards)) }
+            }
+            
             return {
                 switch $0 {
                 case .fetchRandomCardsPairs(let numberOfPairs):
-                    standartOnStartFetchCommandBlock()
                     let fetchResult = cardsRepository.fetchRandomEntity(count: numberOfPairs).handleEvents(
-                        receiveOutput: { cards in
-                            logger.debug("use case value receive")
-                            print(Thread.current)
-                            let cardsPairs = cards.reduce(into: []) { result, card in
-                                result.append(contentsOf: [card, card])
-                            }.shuffled()
-                            store.update { $0 = .object(cardsPairs)}
-                        },
-                        receiveCompletion: standartOnReceiveCompletionBlock
+                        receiveOutput: onReseiveValueBlock,
+                        receiveCompletion: onCompletionBlock,
+                        receiveRequest: onReceiveRequestBlock
                     )
                     fetchResult.sink().store(in: &bindings)
                 case .resetCards:
-                    break
+                    guard case let .object(objects) = store.eventsRelay.value.filter({ state in
+                        switch state {
+                        case .object:
+                            return true
+                        default:
+                            return false
+                        }
+                    }).last else {
+                        return
+                    }
+                    let fetchResult = cardsRepository.fetchRandomEntity(count: objects.count / 2)
+                        .handleEvents(
+                            receiveOutput: onReseiveValueBlock,
+                            receiveCompletion: onCompletionBlock,
+                            receiveRequest: onReceiveRequestBlock
+                        )
+                    fetchResult.sink().store(in: &bindings)
                 }
             }
         }

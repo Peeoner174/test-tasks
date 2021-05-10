@@ -11,6 +11,9 @@ typealias Closure<Input, Output> = (Input) -> Output
 /// Closure with no arguments and custom return value.
 typealias ResultClosure<Output> = () -> Output
 
+/// Closure with custom arguments and void return value
+typealias VoidOutputClosure<Input> = (Input) -> Void
+
 /// Closure that takes custom arguments and returns Void.
 typealias ParameterClosure<Input> = Closure<Input, Void>
 

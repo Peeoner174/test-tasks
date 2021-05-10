@@ -13,7 +13,7 @@ final class CardsRepositoryImpl: CardsRepository {
     typealias Entity = Card
     
     func fetchRandomEntity(count: Int) -> AnyPublisher<[Card], Error> {
-        let cards = Array(0...count).map { index -> Card in
+        let cards = Array(0..<count).map { index -> Card in
             sleep(1)
             let symbol = SFSymbol.allCases.randomElement()
             return Card(refKey: index, image: symbol?.rawValue)

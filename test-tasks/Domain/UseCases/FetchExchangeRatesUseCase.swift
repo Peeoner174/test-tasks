@@ -20,12 +20,10 @@ extension UseCase {
             let exchangeRatesRepository = ExchangeRatesRepositoryImpl(networkClient: resolve(\.networkClient))
             
             let standartOnStartFetchCommandBlock: ((Subscribers.Demand) -> Void)? = { _ in
-                logger.debug("use case start")
                 store.update { $0 = .loading }
             }
             
             let standartOnReceiveCompletionBlock: ((Subscribers.Completion<Error>) -> Void)? = { completion in
-                logger.debug("use case complete")
                 switch completion {
                 case .finished:
                     store.update { $0 = .complete }
@@ -35,7 +33,6 @@ extension UseCase {
             }
             
             let standartOnReveiveValueBlock: ((Сurrency.ConversionRates) -> Void)? = { object in
-                logger.debug("use case receive value")
                 store.update { $0 = .object(object) }
             }
             
@@ -59,12 +56,10 @@ extension UseCase {
             let exchangeRatesRepository = ExchangeRatesRepositoryImpl(networkClient: resolve(\.networkClientRemoteMock))
             
             let standartOnStartFetchCommandBlock: ((Subscribers.Demand) -> Void)? = { _ in
-                logger.debug("MOCK use case start")
                 store.update { $0 = .loading }
             }
             
             let standartOnReceiveCompletionBlock: ((Subscribers.Completion<Error>) -> Void)? = { completion in
-                logger.debug("MOCK use case complete")
                 switch completion {
                 case .finished:
                     store.update { $0 = .complete }
@@ -74,7 +69,6 @@ extension UseCase {
             }
             
             let standartOnReveiveValueBlock: ((Сurrency.ConversionRates) -> Void)? = { object in
-                logger.debug("MOCK use case receive value")
                 store.update { $0 = .object(object) }
             }
             
