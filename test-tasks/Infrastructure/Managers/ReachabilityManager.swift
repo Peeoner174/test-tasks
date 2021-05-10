@@ -219,7 +219,7 @@ extension NetworkStatusSupplier {
 }
 
 // MARK: -  Subscribers must conform to this protocol
-protocol NetworkStatusListener: class {
+protocol NetworkStatusListener: AnyObject {
     
     /// Action on network status did change event
     /// - parameters:

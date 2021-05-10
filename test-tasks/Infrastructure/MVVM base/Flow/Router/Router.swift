@@ -9,7 +9,7 @@ import UIKit
 
 typealias NavigationBackClosure = (() -> Void)
 
-protocol Router: class {
+protocol Router: AnyObject {
     var navigationController: NavigationController { get set }
     
     init(navigationController: NavigationController)

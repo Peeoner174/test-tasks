@@ -43,7 +43,9 @@ final class PexesoMainMenuCoordinator: BaseCoordinator {
         let coordinator: Coordinator
         switch navigation {
         case .game:
-            coordinator = PexesoGameCoordinator(router: RouterImpl(navigationController: router.navigationController))
+            let pexesoGameCoordinator = PexesoGameCoordinator(router: RouterImpl(navigationController: router.navigationController))
+            pexesoGameCoordinator.rootViewController.viewModel.setLevel(rootViewController.viewModel.level.value)
+            coordinator = pexesoGameCoordinator
         }
         store(coordinator: coordinator)
         

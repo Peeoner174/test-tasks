@@ -49,9 +49,11 @@ extension UseCase {
                     }
                     
                 case .reset:
-                    guard case .pause = store.currentState else { return }
                     timer?.invalidate()
-                    store.update { $0 = .stopped }
+                    store.update { $0 = .counting(0) }
+                    timer = .scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                        store.update { $0 = .counting($0.count + 1) }
+                    }
                 }
             }
         }
@@ -75,7 +77,6 @@ extension UseCase {
                     }
                     
                 case .reset:
-                    guard case .pause = store.currentState else { return }
                     timer?.invalidate()
                     store.update { $0 = .stopped }
                 }

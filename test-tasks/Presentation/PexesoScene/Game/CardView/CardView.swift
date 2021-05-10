@@ -10,7 +10,7 @@ import Combine
 
 // MARK: - Delegate
 
-protocol CardViewDelegate: class {
+protocol CardViewDelegate: AnyObject {
     func cardViewDidTapped(_ cardView: CardView, withModel model: Card)
 }
 

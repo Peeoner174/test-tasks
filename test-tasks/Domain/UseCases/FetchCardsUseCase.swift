@@ -12,6 +12,7 @@ import UseCase_Combine
 enum FetchCardsCommand: Command {
     typealias State = FetchState<[Card]>
     case fetchRandomCardsPairs(numberOfPairs: Int)
+    case resetCards
 }
 
 extension UseCase {
@@ -53,6 +54,8 @@ extension UseCase {
                         receiveCompletion: standartOnReceiveCompletionBlock
                     )
                     fetchResult.sink().store(in: &bindings)
+                case .resetCards:
+                    break
                 }
             }
         }

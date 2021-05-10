@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-protocol Coordinator: class, Drawable {
+protocol Coordinator: AnyObject, Drawable {
     var childCoordinators : [Coordinator] { get set }
     
     func start() -> AnyPublisher<Void, Never>

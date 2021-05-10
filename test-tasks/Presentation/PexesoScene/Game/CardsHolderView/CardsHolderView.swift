@@ -10,7 +10,7 @@ import Combine
 
 // MARK: Delegate
 
-protocol CardsHolderViewDelegate: class {
+protocol CardsHolderViewDelegate: AnyObject {
     func restartButtonTapped()
 }
 

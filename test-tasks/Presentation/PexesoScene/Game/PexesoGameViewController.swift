@@ -60,9 +60,8 @@ class PexesoGameViewController: MVVMViewController<AnyPexesoGameViewModel, Pexes
 
 extension PexesoGameViewController: CardsHolderViewDelegate {
     func restartButtonTapped() {
-//        viewModel.fetchCardsUseCase.dispatcher.dispatch(.fetchRandomCardsPairs(numberOfPairs: viewModel.level.value))
-        
-        viewModel.timerUseCase.dispatcher.dispatch(.start)
+        viewModel.fetchCardsUseCase.dispatcher.dispatch(.resetCards)
+        viewModel.timerUseCase.dispatcher.dispatch(.reset)
     }
 }
 

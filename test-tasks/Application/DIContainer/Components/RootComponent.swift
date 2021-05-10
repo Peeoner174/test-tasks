@@ -44,7 +44,7 @@ class RootComponentImpl: BootstrapComponent, RootComponent {
         PexesoGameViewModelOfflineImpl(timerUseCase: .timer(), fetchCardsUseCase: .fetchCardsDefault())
     }
     
-    var pexesonMainMenuViewModel: PexesoMainMenuViewModel {
+    var pexesoMainMenuViewModel: PexesoMainMenuViewModel {
         PexesoMainMenuViewModelImpl(withLevel: 1, levelRange: 1...6)
     }
     
